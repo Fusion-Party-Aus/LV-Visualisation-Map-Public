@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e3b">
+  <meta name="description" content="Explore how current issues connect through Fusion’s land value causal network.">
+  <title>Land value causal network · Fusion</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./vendor/cytoscape-3.35.0.min.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Skip to network controls</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Fusion network home"><img class="brand-mark" src="./fusion-logoonly-color.svg" alt=""><span>Fusion</span></a>
+    <div class="header-title">LAND VALUE <span>/</span> CAUSAL NETWORK</div>
+  </header>
+  <main class="workspace">
+    <aside class="explorer" id="explorer" tabindex="-1" aria-label="Explore the network">
+      <h1>Different Problems.<br>Shared Cause.</h1>
+      <p class="intro">Explore how today's big issues all connect to Land Value Inflation.</p>
+      <form id="search-form" role="search" autocomplete="off">
+        <label for="search">Find a problem/contributing factor:</label>
+        <div class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Search by name or ID…" aria-controls="search-results" aria-describedby="search-help"><kbd>/</kbd></div>
+        <span id="search-help" class="sr-only">Enter an ID such as P4 or part of a canonical label. Choose a result to select it.</span>
+      </form>
+      <div id="search-results" class="search-results" aria-label="Search results"></div>
+      <div id="problem-navigation">
+        <div class="section-label">START WITH A CURRENT ISSUE</div>
+        <div id="problems" class="problem-list"></div>
+      </div>
+      <div class="feedback-control"><label for="feedback">Explore a feedback loop:</label><select id="feedback"><option value="">Choose a loop…</option></select></div>
+      <section id="layout-editor" class="layout-editor" aria-label="Layout editor" hidden>
+        <h2>Shape the network</h2>
+        <p>Drag any node. Select an arrow, then drag its solid bend handles. Drag a + handle to add a bend. Background dragging still pans.</p>
+        <div class="editor-actions"><button id="layout-undo" disabled>Undo</button><button id="layout-redo" disabled>Redo</button></div>
+        <p id="layout-selection">Select a node or arrow to edit.</p>
+        <div id="layout-coordinates" hidden>
+          <div class="coordinate-fields"><label>X<input id="layout-x" type="number" step="1"></label><label>Y<input id="layout-y" type="number" step="1"></label></div>
+          <button id="layout-apply">Apply position</button>
+        </div>
+        <div id="layout-edge-actions" class="editor-actions" hidden><button id="layout-remove-bend" disabled>Remove bend</button><button id="layout-straighten">Straighten arrow</button></div>
+        <div class="editor-actions"><button id="layout-export">Export layout</button><button id="layout-import">Import layout</button></div>
+        <input id="layout-file" type="file" accept=".json,application/json" hidden>
+        <button id="layout-restore" class="text-button">Restore original layout</button>
+        <p id="layout-save-status" role="status" aria-live="polite">Changes save in this browser. Export a file to keep a backup.</p>
+      </section>
+    </aside>
+    <section class="map-panel" aria-label="Interactive causal network">
+      <div class="map-heading">
+        <div class="map-context">
+          <div class="direction-key"><button id="direction-toggle" aria-label="Reverse arrows" aria-pressed="false" aria-describedby="direction-meaning" title="Switch to causes pointing towards effects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4"/></svg></button><span class="direction-example">A <span id="direction-arrow" aria-hidden="true">⟶</span> B</span><span id="direction-meaning">A is caused or worsened by B</span><button id="direction-info" class="icon-button" aria-label="Explain the arrow direction">i</button></div>
+          <div class="view-indicator"><span class="status-dot"></span><span id="view-label">Whole network</span><span id="feedback-key" hidden><span aria-hidden="true"></span>Feedback loops</span></div>
+        </div>
+        <div class="map-summary"><span id="counts"></span><button id="labels-toggle" aria-pressed="false">Show full labels</button><button id="layout-toggle" aria-pressed="false" aria-controls="layout-editor">Edit layout</button></div>
+      </div>
+      <div id="map-surface">
+        <svg id="guides" aria-hidden="true"><g id="guide-transform"><ellipse class="ellipse-guide outer-guide"/><ellipse class="ellipse-guide inner-guide"/></g></svg>
+        <div id="cy" tabindex="0" role="region" aria-label="Graph canvas. Use arrow keys to pan, plus and minus to zoom. Search and the details panel provide text navigation."></div>
+        <svg id="layout-handles" aria-label="Arrow bend controls" hidden></svg>
+        <div id="loading" role="status">Loading the complete network…</div>
+        <div class="map-tools">
+          <div class="map-controls" aria-label="Map controls"><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><span></span><button id="fit" aria-label="Fit the whole network" title="Fit whole network">⤢</button></div>
+          <section class="info-box" aria-label="Network information">
+            <div class="info-header">
+              <div role="tablist" aria-label="Information topics">
+                <button id="how-tab" role="tab" aria-selected="true" aria-controls="how-panel">How to Explore</button>
+                <button id="about-tab" role="tab" aria-selected="false" aria-controls="about-panel" tabindex="-1">About the Model</button>
+                <button id="selection-tab" role="tab" aria-selected="false" aria-controls="selection-panel" tabindex="-1" hidden>Selection</button>
+              </div>
+              <button id="info-toggle" aria-expanded="true" aria-controls="info-content" aria-label="Collapse information">−</button>
+            </div>
+            <div id="info-content">
+              <div id="how-panel" role="tabpanel" aria-labelledby="how-tab" tabindex="0">
+                <p>Choose a current issue or search for a concern. Select a problem to read its explanation. Zoom in to reveal the full labels.</p>
+                <p id="direction-guidance"><strong>Read towards the explanation.</strong> Each arrow means “is caused or worsened by” the destination problem.</p>
+              </div>
+              <div id="about-panel" role="tabpanel" aria-labelledby="about-tab" tabindex="0" hidden>
+                <div class="eyebrow">THE COMPLETE PICTURE</div>
+                <h2>One Network. Many Pathways.</h2>
+                <p>Follow the connections between everyday pressures and the mechanisms that sustain them.</p>
+                <p>Fusion’s model identifies inflated land values and their sustaining incentives as the dominant mechanism undermining other partial efforts to address nearer causes for these issues.</p>
+              </div>
+              <div id="selection-panel" role="tabpanel" aria-labelledby="selection-tab" tabindex="0" hidden><div id="details-content"></div></div>
+            </div>
+          </section>
+        </div>
+        <div class="map-bottom"><button id="reset" class="reset-button">↺ <span>Reset view</span></button><span id="map-hint">Scroll to zoom · Drag to pan · Select a problem</span></div>
+      </div>
+    </section>
+  </main>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Please enable JavaScript to explore the interactive network.</p></noscript>
+</body>
+</html>

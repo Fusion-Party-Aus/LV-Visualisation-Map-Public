@@ -1,0 +1,3184 @@
+{
+  "schema": {
+    "schema_name": "Fusion Land Value Causal Network",
+    "schema_version": "1.2",
+    "documentation": {
+      "canonical.nodes": "Unique objects {id,label}. Each label is reproduced exactly from the v11 rectification edition canonical node register.",
+      "canonical.edges": "Unique objects {source,target}. Each directed edge means source IS CAUSED OR WORSENED BY target; traversal follows problems toward underlying factors.",
+      "structural_annotations": "Only references to existing canonical IDs, never additional graph nodes. Splits list their first documented branch targets. Rejoins use unique identifiers (J8 at G5, J16 at X3, J17 at R8).",
+      "source_annotations.node_functions": "Exact Function column of the authoritative node register, keyed by canonical node ID.",
+      "source_annotations.edge_context": "Exact Chain(s) column of the authoritative adjacency list, keyed by source|target.",
+      "source_annotations.source_lines": "1-indexed line numbers in source Markdown, for direct extraction traceability.",
+      "interpretation.edge_qualifications": "Editorial, non-canonical explanations keyed by source|target. Do not add edges from these notes.",
+      "quality_assurance": "Calculated checks and graph statistics from extracted, canonical nodes and adjacency pairs.",
+      "structural_annotations.feedback_loops": "Five named accepted feedback systems F1–F5. F1–F4 each use closed_node_sequence (first ID repeated at end). F5 holds two distinct documented variants in variants[{id,name,closed_node_sequence,condition}]. Six documented closed paths in total. Full graph traversal can find additional emergent simple directed cycles from combinations of other accepted edges; those are not separately documented named feedback mechanisms.",
+      "quality_assurance.simple_directed_cycles_in_graph": "Number of distinct elementary directed cycles in the full graph, computed without regard to which six cycles were named by the source. Because F5 intersects other P2/P3/P5 pathways, this total exceeds the documented closed sequences.",
+      "presentation.node_descriptions": "Voter-facing, plain-language explanations keyed by every canonical node ID. Editorial copy only: not an amendment to the canonical model or original source annotations."
+    },
+    "edge_key_separator": "|",
+    "direction": {
+      "notation": "A → B",
+      "meaning": "A is caused or worsened by B",
+      "traverse": "From observed outcome/problem toward underlying cause",
+      "do_not_interpret_as": "A causes B, chronological order, or financial flow"
+    },
+    "node_types": {
+      "P1-P6": "publicly perceived problem",
+      "L1": "inflated land-values endpoint; member of F1",
+      "other IDs": "canonical intermediate mechanism/factor"
+    },
+    "graph_semantics": {
+      "nonexclusive_causes": true,
+      "edge_weighted": false,
+      "quantitative_effects_estimated": false,
+      "feedback_cycles_traversal": "Acyclic paths may be highlighted; avoid infinite traversal around feedback loops."
+    }
+  },
+  "network": {
+    "title": "Fusion Land Value Causal Network",
+    "canonical_milestone": "v11 rectification edition (derived from completed v10 milestone)",
+    "internal_version": "1.30",
+    "frozen_date": "2026-11-13",
+    "status": "authoritative v11 rectification of the completed primary network",
+    "authoritative_source": {
+      "title": "Fusion — Causal Chains Working Map (v11 Rectification Edition)",
+      "source_file": "Fusion_causal_chains_working_map_v11(8).md",
+      "sha256": "e292898c547f20ef51df274fc4bf08653ea37565b08af9aee4a7113ae30e7e21",
+      "node_register_heading": "Canonical nodes",
+      "adjacency_heading": "Adjacency list — exact backward-causation edges",
+      "source_line_ranges": {
+        "node_register": [
+          53,
+          210
+        ],
+        "adjacency_list": [
+          905,
+          1118
+        ]
+      }
+    },
+    "preceding_baseline": {
+      "version": "v10 completed milestone",
+      "internal_version": "1.23",
+      "source_file": "Fusion_causal_chains_working_map_v10(5).md",
+      "original_unchanged": true
+    },
+    "v11_rectifications": [
+      {
+        "id": "R11-01",
+        "kind": "canonical edge correction",
+        "description": "Move split S2 from M4 to C2. Shared prefix M4 → C1 → C2; S2-A C2 → M5 and S2-B C2 → C3.",
+        "removed_edge": [
+          "M4",
+          "M5"
+        ],
+        "added_edge": [
+          "C2",
+          "M5"
+        ]
+      },
+      {
+        "id": "R11-02",
+        "kind": "explanatory clarification",
+        "description": "G2/G3 intentionally reference whole-property prices; persistent real gains are attributed principally to land appreciation."
+      },
+      {
+        "id": "R11-03",
+        "kind": "canonical expansion and explanatory context",
+        "description": "New nodes X1–X4, six new edges, feedback system F5 with two documented conditional cycles; shareholder-return context added without new graph links."
+      },
+      {
+        "id": "R11-04",
+        "kind": "annotation-only correction",
+        "description": "Procurement S19 rejoin at R8 now J17; keep J8 at G5."
+      }
+    ]
+  },
+  "canonical": {
+    "nodes": [
+      {
+        "id": "P1",
+        "label": "“Too many migrants”"
+      },
+      {
+        "id": "P2",
+        "label": "High housing prices"
+      },
+      {
+        "id": "P3",
+        "label": "Not enough skilled workers being trained"
+      },
+      {
+        "id": "P4",
+        "label": "Infrastructure costs too much"
+      },
+      {
+        "id": "P5",
+        "label": "Cost of living too high"
+      },
+      {
+        "id": "P6",
+        "label": "Loss of social cohesion"
+      },
+      {
+        "id": "M1",
+        "label": "Demand for skilled migrants"
+      },
+      {
+        "id": "M2",
+        "label": "Construction industry labour shortages"
+      },
+      {
+        "id": "M3",
+        "label": "Workers leaving for better-paying opportunities"
+      },
+      {
+        "id": "M4",
+        "label": "Downward pressure on wages"
+      },
+      {
+        "id": "M5",
+        "label": "Rising costs of housing development"
+      },
+      {
+        "id": "M6",
+        "label": "Higher financing and holding costs"
+      },
+      {
+        "id": "M7",
+        "label": "More capital required per dwelling developed"
+      },
+      {
+        "id": "M8",
+        "label": "Higher capital required to acquire development land per dwelling"
+      },
+      {
+        "id": "N2",
+        "label": "Reduced capacity to fund additional housing developments"
+      },
+      {
+        "id": "N3",
+        "label": "More capital tied up in each development"
+      },
+      {
+        "id": "N1",
+        "label": "Reduced economies of scale"
+      },
+      {
+        "id": "C1",
+        "label": "Pressure to minimise construction labour costs"
+      },
+      {
+        "id": "C2",
+        "label": "Pressure on construction margins"
+      },
+      {
+        "id": "C3",
+        "label": "Limited ability to pass higher costs on to buyers"
+      },
+      {
+        "id": "C4",
+        "label": "Strong competition on housing price"
+      },
+      {
+        "id": "C5",
+        "label": "Price-sensitive housing consumers"
+      },
+      {
+        "id": "C6",
+        "label": "New housing demand concentrated among market entrants"
+      },
+      {
+        "id": "C7",
+        "label": "Limited turnover of established housing"
+      },
+      {
+        "id": "C8",
+        "label": "Existing owners retaining appreciating properties"
+      },
+      {
+        "id": "C9",
+        "label": "Expectation of continuing capital gains"
+      },
+      {
+        "id": "H1",
+        "label": "Sustained demand for housing"
+      },
+      {
+        "id": "H2",
+        "label": "Population growth through migration"
+      },
+      {
+        "id": "G1",
+        "label": "Political pressure to sustain migration"
+      },
+      {
+        "id": "G2",
+        "label": "Pressure to maintain property prices"
+      },
+      {
+        "id": "G3",
+        "label": "Growing number of people financially dependent on rising property prices"
+      },
+      {
+        "id": "G4",
+        "label": "Widespread property speculation"
+      },
+      {
+        "id": "G5",
+        "label": "Historically reliable capital gains"
+      },
+      {
+        "id": "F1A",
+        "label": "Investment demand supporting property prices"
+      },
+      {
+        "id": "F1B",
+        "label": "Demand for housing as an appreciating asset"
+      },
+      {
+        "id": "F1C",
+        "label": "Continued land-value appreciation"
+      },
+      {
+        "id": "F1D",
+        "label": "Expectation of future capital gains"
+      },
+      {
+        "id": "T1",
+        "label": "Insufficient employer-provided training places"
+      },
+      {
+        "id": "T2",
+        "label": "SMEs offering too few apprenticeships"
+      },
+      {
+        "id": "T3",
+        "label": "Training treated as an avoidable operating expense"
+      },
+      {
+        "id": "T4",
+        "label": "Squeezed business margins"
+      },
+      {
+        "id": "T5",
+        "label": "High ongoing business overheads"
+      },
+      {
+        "id": "T6",
+        "label": "High cost of acquiring and occupying business premises"
+      },
+      {
+        "id": "T7",
+        "label": "Limited training capacity in large businesses"
+      },
+      {
+        "id": "T8",
+        "label": "Insufficient suitably capable in-house trainers"
+      },
+      {
+        "id": "T9",
+        "label": "Disproportionate departure of highly capable workers from large businesses"
+      },
+      {
+        "id": "T10",
+        "label": "Better opportunities in SMEs and self-employment"
+      },
+      {
+        "id": "T11",
+        "label": "Wage restraint and less attractive conditions in large businesses"
+      },
+      {
+        "id": "T12",
+        "label": "Reduced productive capacity per employee in large businesses"
+      },
+      {
+        "id": "T13",
+        "label": "Large businesses facing competition from SMEs and sole traders"
+      },
+      {
+        "id": "T14",
+        "label": "Proliferation of SMEs and sole traders"
+      },
+      {
+        "id": "I1",
+        "label": "High project delivery costs"
+      },
+      {
+        "id": "I2",
+        "label": "Greater workforce expenditure"
+      },
+      {
+        "id": "I3",
+        "label": "Cumulative subcontractor profit margins"
+      },
+      {
+        "id": "I4",
+        "label": "Longer project delivery times"
+      },
+      {
+        "id": "I5",
+        "label": "More administrative and coordination staff"
+      },
+      {
+        "id": "I6",
+        "label": "Multiple businesses each requiring a profit margin"
+      },
+      {
+        "id": "I7",
+        "label": "Complex subcontracting arrangements"
+      },
+      {
+        "id": "I8",
+        "label": "High cost of acquiring land required for infrastructure"
+      },
+      {
+        "id": "K1",
+        "label": "Government tolerance of cost overruns"
+      },
+      {
+        "id": "K2",
+        "label": "Contracts allocate substantial cost risk to government"
+      },
+      {
+        "id": "K3",
+        "label": "Government agrees to additional contractor payments"
+      },
+      {
+        "id": "K4",
+        "label": "Weak financial incentives to contain overruns"
+      },
+      {
+        "id": "K5",
+        "label": "Contractors have strong negotiating leverage"
+      },
+      {
+        "id": "K6",
+        "label": "Government cannot credibly enforce or terminate"
+      },
+      {
+        "id": "K7",
+        "label": "Few viable alternative principal contractors"
+      },
+      {
+        "id": "K8",
+        "label": "High practical cost of replacing contractors"
+      },
+      {
+        "id": "K9",
+        "label": "High political cost of abandoning projects"
+      },
+      {
+        "id": "K10",
+        "label": "Complex contractual and project dependencies"
+      },
+      {
+        "id": "K11",
+        "label": "Essential infrastructure already urgently needed"
+      },
+      {
+        "id": "K12",
+        "label": "Major electoral commitments tied to completion"
+      },
+      {
+        "id": "K13",
+        "label": "Interdependent contractual obligations"
+      },
+      {
+        "id": "U1",
+        "label": "Infrastructure provision deferred until increasingly urgent"
+      },
+      {
+        "id": "U2",
+        "label": "Weak incentive to build infrastructure ahead of demand"
+      },
+      {
+        "id": "U3",
+        "label": "Poor financial return on infrastructure provision"
+      },
+      {
+        "id": "U4",
+        "label": "High infrastructure costs per dwelling"
+      },
+      {
+        "id": "U5",
+        "label": "Low dwellings per metre of network"
+      },
+      {
+        "id": "U6",
+        "label": "Low-density urban sprawl"
+      },
+      {
+        "id": "U7",
+        "label": "Political resistance to higher taxes, rates and infrastructure charges"
+      },
+      {
+        "id": "U8",
+        "label": "Pressure to contain household infrastructure charges"
+      },
+      {
+        "id": "U9",
+        "label": "High infrastructure maintenance costs per household"
+      },
+      {
+        "id": "U10",
+        "label": "Long infrastructure planning and approval lead times"
+      },
+      {
+        "id": "U11",
+        "label": "Greater infrastructure planning scope and complexity"
+      },
+      {
+        "id": "U12",
+        "label": "Geographically extensive infrastructure networks"
+      },
+      {
+        "id": "U13",
+        "label": "Insufficient redevelopment and densification"
+      },
+      {
+        "id": "U14",
+        "label": "Weak financial incentives to redevelop existing land"
+      },
+      {
+        "id": "U15",
+        "label": "Low cost of retaining underdeveloped land"
+      },
+      {
+        "id": "U16",
+        "label": "Difficulty assembling suitable development sites"
+      },
+      {
+        "id": "U17",
+        "label": "Fragmented availability of adjoining properties"
+      },
+      {
+        "id": "U18",
+        "label": "Political resistance to increasing landholding costs"
+      },
+      {
+        "id": "U19",
+        "label": "Infrastructure problems affecting large numbers of existing voters"
+      },
+      {
+        "id": "U20",
+        "label": "Shared infrastructure capacity strained by new development"
+      },
+      {
+        "id": "U21",
+        "label": "New developments dependent on extensive existing networks"
+      },
+      {
+        "id": "U22",
+        "label": "Long distances between new developments and centralised services"
+      },
+      {
+        "id": "R1",
+        "label": "Materials and equipment purchased at inflated prices"
+      },
+      {
+        "id": "R2",
+        "label": "Domestic supplier prices reflect Australian operating overheads"
+      },
+      {
+        "id": "R3",
+        "label": "Limited substitution with cheaper imported alternatives"
+      },
+      {
+        "id": "R4",
+        "label": "Procurement preferences favour domestic suppliers"
+      },
+      {
+        "id": "R5",
+        "label": "Political pressure to protect domestic industry"
+      },
+      {
+        "id": "R6",
+        "label": "Lobbying by domestic supplier industries"
+      },
+      {
+        "id": "R7",
+        "label": "Electoral importance of local employment"
+      },
+      {
+        "id": "R8",
+        "label": "Sector dependence on an uneven and limited infrastructure pipeline"
+      },
+      {
+        "id": "V1",
+        "label": "Higher fuel and vehicle upkeep costs"
+      },
+      {
+        "id": "V2",
+        "label": "More necessary vehicle use"
+      },
+      {
+        "id": "V3",
+        "label": "Lack of viable public transport alternatives"
+      },
+      {
+        "id": "V4",
+        "label": "Low passenger density and dispersed destinations"
+      },
+      {
+        "id": "E1",
+        "label": "High home servicing costs"
+      },
+      {
+        "id": "E2",
+        "label": "High mortgage repayments"
+      },
+      {
+        "id": "E3",
+        "label": "High council rates"
+      },
+      {
+        "id": "E4",
+        "label": "High fixed utility supply charges"
+      },
+      {
+        "id": "E5",
+        "label": "High usage-based utility charges"
+      },
+      {
+        "id": "E6",
+        "label": "Higher prices of goods and services"
+      },
+      {
+        "id": "X1",
+        "label": "Higher wage expenditure to retain employees"
+      },
+      {
+        "id": "X2",
+        "label": "Higher recruitment and staff-replacement costs"
+      },
+      {
+        "id": "X3",
+        "label": "Workers seeking better-paid employment"
+      },
+      {
+        "id": "X4",
+        "label": "Staff departures in search of better-paid work"
+      },
+      {
+        "id": "W1",
+        "label": "Erosion of real household purchasing power"
+      },
+      {
+        "id": "W2",
+        "label": "Value extraction growing faster than real value creation"
+      },
+      {
+        "id": "W3",
+        "label": "Productive investment displaced by investment in unproductive assets"
+      },
+      {
+        "id": "W4",
+        "label": "Property investment offers more attractive risk-adjusted returns"
+      },
+      {
+        "id": "W5",
+        "label": "Productive business investment offers poorer risk-adjusted returns"
+      },
+      {
+        "id": "W6",
+        "label": "Earned incomes failing to keep pace with necessary expenditure"
+      },
+      {
+        "id": "Q1",
+        "label": "Loss of accessible shared gathering places"
+      },
+      {
+        "id": "Q2",
+        "label": "Fewer free or low-cost community spaces"
+      },
+      {
+        "id": "Q3",
+        "label": "Paid gathering places increasingly inaccessible"
+      },
+      {
+        "id": "Q4",
+        "label": "Community facilities closed or relocated to less accessible premises"
+      },
+      {
+        "id": "Q5",
+        "label": "Community facilities converted into commercial premises"
+      },
+      {
+        "id": "Q6",
+        "label": "Declining use of community facilities"
+      },
+      {
+        "id": "Q7",
+        "label": "Less discretionary time for community participation"
+      },
+      {
+        "id": "Q8",
+        "label": "More household time devoted to paid work to cover necessities"
+      },
+      {
+        "id": "Q9",
+        "label": "Less disposable income for paid social participation"
+      },
+      {
+        "id": "Q10",
+        "label": "Greater pressure to increase prices per customer"
+      },
+      {
+        "id": "Q11",
+        "label": "Fewer customers to spread fixed business costs across"
+      },
+      {
+        "id": "Q12",
+        "label": "More businesses competing for limited discretionary spending"
+      },
+      {
+        "id": "Q13",
+        "label": "Community members see each other less"
+      },
+      {
+        "id": "Q14",
+        "label": "Some families or family members are forced to move away"
+      },
+      {
+        "id": "Q15",
+        "label": "Growing families can't find or afford bigger homes nearby"
+      },
+      {
+        "id": "Q16",
+        "label": "New couples can't afford homes of their own nearby"
+      },
+      {
+        "id": "Q17",
+        "label": "New people struggle to make friends in their community"
+      },
+      {
+        "id": "Q18",
+        "label": "Most local get-togethers happen among existing friends in private homes"
+      },
+      {
+        "id": "Q19",
+        "label": "Established residents can easily host friends at home"
+      },
+      {
+        "id": "Q20",
+        "label": "Adult children have moved away"
+      },
+      {
+        "id": "Q21",
+        "label": "More residents already have longstanding friendships"
+      },
+      {
+        "id": "Q22",
+        "label": "Younger members make up less of the community"
+      },
+      {
+        "id": "Q23",
+        "label": "People become suspicious of other communities"
+      },
+      {
+        "id": "Q24",
+        "label": "People increasingly believe other groups are causing their problems"
+      },
+      {
+        "id": "Q25",
+        "label": "Political messages encourage people to blame other groups"
+      },
+      {
+        "id": "Q26",
+        "label": "Blaming other groups wins political support"
+      },
+      {
+        "id": "Q27",
+        "label": "People have no basis to trust people in other communities"
+      },
+      {
+        "id": "Q28",
+        "label": "People have fewer chances to get to know other communities"
+      },
+      {
+        "id": "Q29",
+        "label": "People are looking for simple answers to their problems"
+      },
+      {
+        "id": "Q30",
+        "label": "People feel stuck and can't see a way forward"
+      },
+      {
+        "id": "Q31",
+        "label": "People have little time or energy to work out what's really wrong"
+      },
+      {
+        "id": "L1",
+        "label": "Inflated land values"
+      }
+    ],
+    "edges": [
+      {
+        "source": "M1",
+        "target": "M2"
+      },
+      {
+        "source": "M2",
+        "target": "M3"
+      },
+      {
+        "source": "M3",
+        "target": "M4"
+      },
+      {
+        "source": "C2",
+        "target": "M5"
+      },
+      {
+        "source": "M5",
+        "target": "M6"
+      },
+      {
+        "source": "M6",
+        "target": "M7"
+      },
+      {
+        "source": "M7",
+        "target": "M8"
+      },
+      {
+        "source": "M5",
+        "target": "N1"
+      },
+      {
+        "source": "N1",
+        "target": "N2"
+      },
+      {
+        "source": "N2",
+        "target": "N3"
+      },
+      {
+        "source": "N3",
+        "target": "M8"
+      },
+      {
+        "source": "M8",
+        "target": "L1"
+      },
+      {
+        "source": "M4",
+        "target": "C1"
+      },
+      {
+        "source": "C1",
+        "target": "C2"
+      },
+      {
+        "source": "C2",
+        "target": "C3"
+      },
+      {
+        "source": "C3",
+        "target": "C4"
+      },
+      {
+        "source": "C4",
+        "target": "C5"
+      },
+      {
+        "source": "C5",
+        "target": "C6"
+      },
+      {
+        "source": "C6",
+        "target": "C7"
+      },
+      {
+        "source": "C7",
+        "target": "C8"
+      },
+      {
+        "source": "C8",
+        "target": "C9"
+      },
+      {
+        "source": "C9",
+        "target": "G5"
+      },
+      {
+        "source": "P2",
+        "target": "H1"
+      },
+      {
+        "source": "H1",
+        "target": "H2"
+      },
+      {
+        "source": "H1",
+        "target": "F1B"
+      },
+      {
+        "source": "H2",
+        "target": "M1"
+      },
+      {
+        "source": "P1",
+        "target": "G1"
+      },
+      {
+        "source": "G1",
+        "target": "G2"
+      },
+      {
+        "source": "G1",
+        "target": "M1"
+      },
+      {
+        "source": "G2",
+        "target": "G3"
+      },
+      {
+        "source": "G3",
+        "target": "G4"
+      },
+      {
+        "source": "G4",
+        "target": "G5"
+      },
+      {
+        "source": "G5",
+        "target": "L1"
+      },
+      {
+        "source": "L1",
+        "target": "F1A"
+      },
+      {
+        "source": "F1A",
+        "target": "F1B"
+      },
+      {
+        "source": "F1B",
+        "target": "F1C"
+      },
+      {
+        "source": "F1C",
+        "target": "F1D"
+      },
+      {
+        "source": "F1D",
+        "target": "G5"
+      },
+      {
+        "source": "M2",
+        "target": "P3"
+      },
+      {
+        "source": "P3",
+        "target": "T1"
+      },
+      {
+        "source": "T1",
+        "target": "T2"
+      },
+      {
+        "source": "T2",
+        "target": "T3"
+      },
+      {
+        "source": "T3",
+        "target": "T4"
+      },
+      {
+        "source": "T4",
+        "target": "T5"
+      },
+      {
+        "source": "T5",
+        "target": "T6"
+      },
+      {
+        "source": "T6",
+        "target": "L1"
+      },
+      {
+        "source": "T1",
+        "target": "T7"
+      },
+      {
+        "source": "T7",
+        "target": "T8"
+      },
+      {
+        "source": "T8",
+        "target": "T9"
+      },
+      {
+        "source": "T7",
+        "target": "T4"
+      },
+      {
+        "source": "T4",
+        "target": "T12"
+      },
+      {
+        "source": "T12",
+        "target": "T9"
+      },
+      {
+        "source": "T9",
+        "target": "T10"
+      },
+      {
+        "source": "T10",
+        "target": "T11"
+      },
+      {
+        "source": "T11",
+        "target": "T4"
+      },
+      {
+        "source": "T4",
+        "target": "T13"
+      },
+      {
+        "source": "T13",
+        "target": "T14"
+      },
+      {
+        "source": "T14",
+        "target": "T9"
+      },
+      {
+        "source": "P4",
+        "target": "I1"
+      },
+      {
+        "source": "P4",
+        "target": "I8"
+      },
+      {
+        "source": "I8",
+        "target": "L1"
+      },
+      {
+        "source": "I1",
+        "target": "I2"
+      },
+      {
+        "source": "I1",
+        "target": "I3"
+      },
+      {
+        "source": "I2",
+        "target": "I4"
+      },
+      {
+        "source": "I2",
+        "target": "I5"
+      },
+      {
+        "source": "I4",
+        "target": "T12"
+      },
+      {
+        "source": "I4",
+        "target": "I7"
+      },
+      {
+        "source": "I5",
+        "target": "I7"
+      },
+      {
+        "source": "I3",
+        "target": "I6"
+      },
+      {
+        "source": "I6",
+        "target": "I7"
+      },
+      {
+        "source": "I7",
+        "target": "T14"
+      },
+      {
+        "source": "P4",
+        "target": "K1"
+      },
+      {
+        "source": "K1",
+        "target": "K2"
+      },
+      {
+        "source": "K1",
+        "target": "K3"
+      },
+      {
+        "source": "K1",
+        "target": "K4"
+      },
+      {
+        "source": "K2",
+        "target": "K5"
+      },
+      {
+        "source": "K3",
+        "target": "K6"
+      },
+      {
+        "source": "K4",
+        "target": "K6"
+      },
+      {
+        "source": "K5",
+        "target": "K7"
+      },
+      {
+        "source": "K6",
+        "target": "K8"
+      },
+      {
+        "source": "K6",
+        "target": "K9"
+      },
+      {
+        "source": "K8",
+        "target": "K10"
+      },
+      {
+        "source": "K10",
+        "target": "K13"
+      },
+      {
+        "source": "K13",
+        "target": "I7"
+      },
+      {
+        "source": "K8",
+        "target": "K7"
+      },
+      {
+        "source": "K9",
+        "target": "K11"
+      },
+      {
+        "source": "K9",
+        "target": "K12"
+      },
+      {
+        "source": "K7",
+        "target": "T14"
+      },
+      {
+        "source": "K11",
+        "target": "U1"
+      },
+      {
+        "source": "U1",
+        "target": "U2"
+      },
+      {
+        "source": "U2",
+        "target": "U3"
+      },
+      {
+        "source": "U3",
+        "target": "U4"
+      },
+      {
+        "source": "U4",
+        "target": "U5"
+      },
+      {
+        "source": "U5",
+        "target": "U6"
+      },
+      {
+        "source": "U2",
+        "target": "U7"
+      },
+      {
+        "source": "U7",
+        "target": "U8"
+      },
+      {
+        "source": "U8",
+        "target": "U9"
+      },
+      {
+        "source": "U9",
+        "target": "U5"
+      },
+      {
+        "source": "K11",
+        "target": "U10"
+      },
+      {
+        "source": "U10",
+        "target": "U11"
+      },
+      {
+        "source": "U11",
+        "target": "U12"
+      },
+      {
+        "source": "U12",
+        "target": "U6"
+      },
+      {
+        "source": "U6",
+        "target": "U13"
+      },
+      {
+        "source": "U13",
+        "target": "U14"
+      },
+      {
+        "source": "U14",
+        "target": "C8"
+      },
+      {
+        "source": "U13",
+        "target": "U16"
+      },
+      {
+        "source": "U16",
+        "target": "U17"
+      },
+      {
+        "source": "U17",
+        "target": "C8"
+      },
+      {
+        "source": "C8",
+        "target": "U15"
+      },
+      {
+        "source": "U15",
+        "target": "U18"
+      },
+      {
+        "source": "U18",
+        "target": "G3"
+      },
+      {
+        "source": "M5",
+        "target": "U4"
+      },
+      {
+        "source": "K12",
+        "target": "U1"
+      },
+      {
+        "source": "K12",
+        "target": "U19"
+      },
+      {
+        "source": "U19",
+        "target": "U20"
+      },
+      {
+        "source": "U20",
+        "target": "U21"
+      },
+      {
+        "source": "U21",
+        "target": "U22"
+      },
+      {
+        "source": "U22",
+        "target": "U6"
+      },
+      {
+        "source": "I1",
+        "target": "R1"
+      },
+      {
+        "source": "R1",
+        "target": "R2"
+      },
+      {
+        "source": "R2",
+        "target": "T5"
+      },
+      {
+        "source": "R1",
+        "target": "R3"
+      },
+      {
+        "source": "R3",
+        "target": "R4"
+      },
+      {
+        "source": "R4",
+        "target": "R5"
+      },
+      {
+        "source": "R5",
+        "target": "R6"
+      },
+      {
+        "source": "R5",
+        "target": "R7"
+      },
+      {
+        "source": "R6",
+        "target": "R8"
+      },
+      {
+        "source": "R7",
+        "target": "R8"
+      },
+      {
+        "source": "R8",
+        "target": "U1"
+      },
+      {
+        "source": "P5",
+        "target": "V1"
+      },
+      {
+        "source": "V1",
+        "target": "V2"
+      },
+      {
+        "source": "V2",
+        "target": "V3"
+      },
+      {
+        "source": "V3",
+        "target": "V4"
+      },
+      {
+        "source": "V4",
+        "target": "U6"
+      },
+      {
+        "source": "P5",
+        "target": "E1"
+      },
+      {
+        "source": "E1",
+        "target": "E2"
+      },
+      {
+        "source": "E2",
+        "target": "P2"
+      },
+      {
+        "source": "E1",
+        "target": "E3"
+      },
+      {
+        "source": "E3",
+        "target": "U9"
+      },
+      {
+        "source": "E1",
+        "target": "E4"
+      },
+      {
+        "source": "E4",
+        "target": "U9"
+      },
+      {
+        "source": "E1",
+        "target": "E5"
+      },
+      {
+        "source": "E5",
+        "target": "U9"
+      },
+      {
+        "source": "P5",
+        "target": "E6"
+      },
+      {
+        "source": "E6",
+        "target": "T5"
+      },
+      {
+        "source": "T5",
+        "target": "X1"
+      },
+      {
+        "source": "X1",
+        "target": "X3"
+      },
+      {
+        "source": "T5",
+        "target": "X2"
+      },
+      {
+        "source": "X2",
+        "target": "X4"
+      },
+      {
+        "source": "X4",
+        "target": "X3"
+      },
+      {
+        "source": "X3",
+        "target": "P5"
+      },
+      {
+        "source": "P5",
+        "target": "W1"
+      },
+      {
+        "source": "W1",
+        "target": "W2"
+      },
+      {
+        "source": "W2",
+        "target": "W3"
+      },
+      {
+        "source": "W3",
+        "target": "W4"
+      },
+      {
+        "source": "W4",
+        "target": "G5"
+      },
+      {
+        "source": "W4",
+        "target": "W5"
+      },
+      {
+        "source": "W5",
+        "target": "T4"
+      },
+      {
+        "source": "W1",
+        "target": "W6"
+      },
+      {
+        "source": "W6",
+        "target": "T11"
+      },
+      {
+        "source": "P6",
+        "target": "Q1"
+      },
+      {
+        "source": "Q1",
+        "target": "Q2"
+      },
+      {
+        "source": "Q1",
+        "target": "Q3"
+      },
+      {
+        "source": "Q2",
+        "target": "Q4"
+      },
+      {
+        "source": "Q4",
+        "target": "Q6"
+      },
+      {
+        "source": "Q2",
+        "target": "Q5"
+      },
+      {
+        "source": "Q5",
+        "target": "Q6"
+      },
+      {
+        "source": "Q6",
+        "target": "Q7"
+      },
+      {
+        "source": "Q7",
+        "target": "Q8"
+      },
+      {
+        "source": "Q8",
+        "target": "P5"
+      },
+      {
+        "source": "Q3",
+        "target": "Q9"
+      },
+      {
+        "source": "Q9",
+        "target": "P5"
+      },
+      {
+        "source": "Q3",
+        "target": "Q10"
+      },
+      {
+        "source": "Q10",
+        "target": "Q11"
+      },
+      {
+        "source": "Q11",
+        "target": "Q12"
+      },
+      {
+        "source": "Q12",
+        "target": "Q5"
+      },
+      {
+        "source": "P6",
+        "target": "Q13"
+      },
+      {
+        "source": "Q13",
+        "target": "Q14"
+      },
+      {
+        "source": "Q14",
+        "target": "Q15"
+      },
+      {
+        "source": "Q15",
+        "target": "P2"
+      },
+      {
+        "source": "Q15",
+        "target": "C7"
+      },
+      {
+        "source": "Q14",
+        "target": "Q16"
+      },
+      {
+        "source": "Q16",
+        "target": "P2"
+      },
+      {
+        "source": "P6",
+        "target": "Q17"
+      },
+      {
+        "source": "Q17",
+        "target": "Q18"
+      },
+      {
+        "source": "Q18",
+        "target": "Q1"
+      },
+      {
+        "source": "Q18",
+        "target": "Q19"
+      },
+      {
+        "source": "Q19",
+        "target": "Q20"
+      },
+      {
+        "source": "Q20",
+        "target": "Q14"
+      },
+      {
+        "source": "Q18",
+        "target": "Q21"
+      },
+      {
+        "source": "Q21",
+        "target": "Q22"
+      },
+      {
+        "source": "Q22",
+        "target": "Q14"
+      },
+      {
+        "source": "P6",
+        "target": "Q23"
+      },
+      {
+        "source": "Q23",
+        "target": "Q24"
+      },
+      {
+        "source": "Q23",
+        "target": "Q27"
+      },
+      {
+        "source": "Q27",
+        "target": "Q28"
+      },
+      {
+        "source": "Q28",
+        "target": "Q1"
+      },
+      {
+        "source": "Q24",
+        "target": "Q25"
+      },
+      {
+        "source": "Q25",
+        "target": "Q26"
+      },
+      {
+        "source": "Q26",
+        "target": "Q24"
+      },
+      {
+        "source": "Q24",
+        "target": "Q29"
+      },
+      {
+        "source": "Q29",
+        "target": "Q30"
+      },
+      {
+        "source": "Q30",
+        "target": "P5"
+      },
+      {
+        "source": "Q29",
+        "target": "Q31"
+      },
+      {
+        "source": "Q31",
+        "target": "Q8"
+      }
+    ]
+  },
+  "structural_annotations": {
+    "top_level_problems": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5",
+      "P6"
+    ],
+    "shared_endpoint": "L1",
+    "seven_chains": [
+      {
+        "number": 1,
+        "name": "P1 — skilled-workforce branch",
+        "entry_node": "P1",
+        "main_intersection": "M1"
+      },
+      {
+        "number": 2,
+        "name": "P2 — migration and housing demand",
+        "entry_node": "P2",
+        "main_intersection": "M1"
+      },
+      {
+        "number": 3,
+        "name": "P1 — political and property-price incentives",
+        "entry_node": "P1",
+        "main_intersection": "G5"
+      },
+      {
+        "number": 4,
+        "name": "P3 — employer-supported training places",
+        "entry_node": "P3",
+        "main_intersection": "T4"
+      },
+      {
+        "number": 5,
+        "name": "P4 — infrastructure cost pathways",
+        "entry_node": "P4",
+        "main_intersection": "U6"
+      },
+      {
+        "number": 6,
+        "name": "P5 — cost of living and purchasing power",
+        "entry_node": "P5",
+        "main_intersection": "T5"
+      },
+      {
+        "number": 7,
+        "name": "P6 — social cohesion, four subchains",
+        "entry_node": "P6",
+        "main_intersection": "P5"
+      }
+    ],
+    "p6_subchains": [
+      {
+        "name": "Loss of accessible shared gathering places",
+        "start_edge": [
+          "P6",
+          "Q1"
+        ]
+      },
+      {
+        "name": "Housing-driven departure of established community members",
+        "start_edge": [
+          "P6",
+          "Q13"
+        ]
+      },
+      {
+        "name": "Barriers for newcomers entering private friendship circles",
+        "start_edge": [
+          "P6",
+          "Q17"
+        ]
+      },
+      {
+        "name": "Suspicion, political blame narratives, and limited interpersonal familiarity",
+        "start_edge": [
+          "P6",
+          "Q23"
+        ]
+      }
+    ],
+    "feedback_loops": [
+      {
+        "id": "F1",
+        "name": "Speculative appreciation feedback",
+        "closed_node_sequence": [
+          "L1",
+          "F1A",
+          "F1B",
+          "F1C",
+          "F1D",
+          "G5",
+          "L1"
+        ]
+      },
+      {
+        "id": "F2",
+        "name": "Industry fragmentation feedback",
+        "closed_node_sequence": [
+          "T9",
+          "T10",
+          "T11",
+          "T4",
+          "T13",
+          "T14",
+          "T9"
+        ]
+      },
+      {
+        "id": "F3",
+        "name": "Large-business productivity erosion feedback",
+        "closed_node_sequence": [
+          "T4",
+          "T12",
+          "T9",
+          "T10",
+          "T11",
+          "T4"
+        ]
+      },
+      {
+        "id": "F4",
+        "name": "Political blame narratives feedback",
+        "closed_node_sequence": [
+          "Q24",
+          "Q25",
+          "Q26",
+          "Q24"
+        ]
+      },
+      {
+        "id": "F5",
+        "name": "Cost-of-living, wage, and workforce-turnover feedback",
+        "description": "One conditional amplification mechanism with two documented alternative employer responses; both return through P5 → E6 → T5 and preserve the land-cost continuation T5 → T6 → L1.",
+        "variants": [
+          {
+            "id": "F5-A",
+            "name": "Retention-wage response",
+            "closed_node_sequence": [
+              "P5",
+              "E6",
+              "T5",
+              "X1",
+              "X3",
+              "P5"
+            ],
+            "condition": "Employers raise remuneration to retain workers who seek better-paid employment; wage expenditure increases operating overheads."
+          },
+          {
+            "id": "F5-B",
+            "name": "Departure and replacement-cost response",
+            "closed_node_sequence": [
+              "P5",
+              "E6",
+              "T5",
+              "X2",
+              "X4",
+              "X3",
+              "P5"
+            ],
+            "condition": "Workers seeking better pay depart where alternatives are available, increasing recruitment and staff-replacement costs."
+          }
+        ]
+      }
+    ],
+    "splits": [
+      {
+        "marker": "S1",
+        "at_node": "M5",
+        "first_targets_of_documented_branches": [
+          "M6",
+          "N1"
+        ]
+      },
+      {
+        "marker": "S2",
+        "at_node": "C2",
+        "first_targets_of_documented_branches": [
+          "M5",
+          "C3"
+        ]
+      },
+      {
+        "marker": "S3",
+        "at_node": "T1",
+        "first_targets_of_documented_branches": [
+          "T2",
+          "T7"
+        ]
+      },
+      {
+        "marker": "S4",
+        "at_node": "T7",
+        "first_targets_of_documented_branches": [
+          "T8",
+          "T4"
+        ]
+      },
+      {
+        "marker": "S5",
+        "at_node": "P4",
+        "first_targets_of_documented_branches": [
+          "I1",
+          "I8",
+          "K1"
+        ]
+      },
+      {
+        "marker": "S6",
+        "at_node": "I1",
+        "first_targets_of_documented_branches": [
+          "I2",
+          "I3"
+        ]
+      },
+      {
+        "marker": "S7",
+        "at_node": "I2",
+        "first_targets_of_documented_branches": [
+          "I4",
+          "I5"
+        ]
+      },
+      {
+        "marker": "S8",
+        "at_node": "I4",
+        "first_targets_of_documented_branches": [
+          "T12",
+          "I7"
+        ]
+      },
+      {
+        "marker": "S9",
+        "at_node": "K1",
+        "first_targets_of_documented_branches": [
+          "K2",
+          "K3",
+          "K4"
+        ]
+      },
+      {
+        "marker": "S10",
+        "at_node": "K6",
+        "first_targets_of_documented_branches": [
+          "K8",
+          "K9"
+        ]
+      },
+      {
+        "marker": "S11",
+        "at_node": "K8",
+        "first_targets_of_documented_branches": [
+          "K10",
+          "K7"
+        ]
+      },
+      {
+        "marker": "S12",
+        "at_node": "K9",
+        "first_targets_of_documented_branches": [
+          "K11",
+          "K12"
+        ]
+      },
+      {
+        "marker": "S13",
+        "at_node": "K11",
+        "first_targets_of_documented_branches": [
+          "U1",
+          "U10"
+        ]
+      },
+      {
+        "marker": "S14",
+        "at_node": "U2",
+        "first_targets_of_documented_branches": [
+          "U3",
+          "U7"
+        ]
+      },
+      {
+        "marker": "S15",
+        "at_node": "U13",
+        "first_targets_of_documented_branches": [
+          "U14",
+          "U16"
+        ]
+      },
+      {
+        "marker": "S16",
+        "at_node": "C8",
+        "first_targets_of_documented_branches": [
+          "C9",
+          "U15"
+        ]
+      },
+      {
+        "marker": "S17",
+        "at_node": "K12",
+        "first_targets_of_documented_branches": [
+          "U1",
+          "U19"
+        ]
+      },
+      {
+        "marker": "S18",
+        "at_node": "R1",
+        "first_targets_of_documented_branches": [
+          "R2",
+          "R3"
+        ]
+      },
+      {
+        "marker": "S19",
+        "at_node": "R5",
+        "first_targets_of_documented_branches": [
+          "R6",
+          "R7"
+        ]
+      },
+      {
+        "marker": "S20",
+        "at_node": "P5",
+        "first_targets_of_documented_branches": [
+          "V1",
+          "E1",
+          "E6",
+          "W1"
+        ]
+      },
+      {
+        "marker": "S21",
+        "at_node": "E1",
+        "first_targets_of_documented_branches": [
+          "E2",
+          "E3",
+          "E4",
+          "E5"
+        ]
+      },
+      {
+        "marker": "S22",
+        "at_node": "W1",
+        "first_targets_of_documented_branches": [
+          "W2",
+          "W6"
+        ]
+      },
+      {
+        "marker": "S23",
+        "at_node": "W4",
+        "first_targets_of_documented_branches": [
+          "G5",
+          "W5"
+        ]
+      },
+      {
+        "marker": "S24",
+        "at_node": "Q1",
+        "first_targets_of_documented_branches": [
+          "Q2",
+          "Q3"
+        ]
+      },
+      {
+        "marker": "S25",
+        "at_node": "Q2",
+        "first_targets_of_documented_branches": [
+          "Q4",
+          "Q5"
+        ]
+      },
+      {
+        "marker": "S26",
+        "at_node": "Q3",
+        "first_targets_of_documented_branches": [
+          "Q9",
+          "Q10"
+        ]
+      },
+      {
+        "marker": "S27",
+        "at_node": "P6",
+        "first_targets_of_documented_branches": [
+          "Q1",
+          "Q13",
+          "Q17",
+          "Q23"
+        ]
+      },
+      {
+        "marker": "S28",
+        "at_node": "Q14",
+        "first_targets_of_documented_branches": [
+          "Q15",
+          "Q16"
+        ]
+      },
+      {
+        "marker": "S29",
+        "at_node": "Q18",
+        "first_targets_of_documented_branches": [
+          "Q1",
+          "Q19",
+          "Q21"
+        ]
+      },
+      {
+        "marker": "S30",
+        "at_node": "Q15",
+        "first_targets_of_documented_branches": [
+          "P2",
+          "C7"
+        ]
+      },
+      {
+        "marker": "S31",
+        "at_node": "Q23",
+        "first_targets_of_documented_branches": [
+          "Q24",
+          "Q27"
+        ]
+      },
+      {
+        "marker": "S32",
+        "at_node": "Q24",
+        "first_targets_of_documented_branches": [
+          "Q25",
+          "Q29"
+        ]
+      },
+      {
+        "marker": "S33",
+        "at_node": "Q29",
+        "first_targets_of_documented_branches": [
+          "Q30",
+          "Q31"
+        ]
+      },
+      {
+        "marker": "S34",
+        "at_node": "T5",
+        "first_targets_of_documented_branches": [
+          "X1",
+          "X2"
+        ],
+        "context": "F5 alternative retention-wage and departure/replacement-cost branches; T5 → T6 → L1 remains the underlying cost-anchor continuation"
+      }
+    ],
+    "rejoins": [
+      {
+        "source_marker": "J1",
+        "at_node": "M8",
+        "context": "S1 land-capital financing and scale branches"
+      },
+      {
+        "source_marker": "J2",
+        "at_node": "L1",
+        "context": "S2 development-cost and consumer-pricing branches"
+      },
+      {
+        "source_marker": "J3",
+        "at_node": "T9",
+        "context": "S4 large-employer selective-departure branches"
+      },
+      {
+        "source_marker": "J4",
+        "at_node": "L1",
+        "context": "S3 SME and large-employer pathways"
+      },
+      {
+        "source_marker": "J5",
+        "at_node": "L1",
+        "context": "S5 infrastructure-cost branches"
+      },
+      {
+        "source_marker": "J6",
+        "at_node": "U5",
+        "context": "S14 infrastructure financing/maintenance branches"
+      },
+      {
+        "source_marker": "J7",
+        "at_node": "C8",
+        "context": "S15 redevelopment incentives and site assembly"
+      },
+      {
+        "source_marker": "J8",
+        "at_node": "G5",
+        "context": "S16 owner-retention explanations; J8 is unique in v11"
+      },
+      {
+        "source_marker": "J9",
+        "at_node": "U9",
+        "context": "S21 council rates and utility maintenance recovery"
+      },
+      {
+        "source_marker": "J10",
+        "at_node": "Q6",
+        "context": "S25 non-commercial community-facility withdrawal"
+      },
+      {
+        "source_marker": "J11",
+        "at_node": "P5",
+        "context": "S26 time and disposable-income constraints"
+      },
+      {
+        "source_marker": "J12",
+        "at_node": "P2",
+        "context": "S28/S30 housing-cost intersections"
+      },
+      {
+        "source_marker": "J13",
+        "at_node": "Q1",
+        "context": "S29/S31 shared gathering-place intersections"
+      },
+      {
+        "source_marker": "J14",
+        "at_node": "Q14",
+        "context": "S29 private-circle/departure intersections"
+      },
+      {
+        "source_marker": "J15",
+        "at_node": "C7",
+        "context": "S30 established-housing turnover intersection"
+      },
+      {
+        "source_marker": "J16",
+        "at_node": "X3",
+        "context": "F5 wage-retention and workforce-departure variants share workers seeking better-paid employment"
+      },
+      {
+        "source_marker": "J17",
+        "at_node": "R8",
+        "context": "S19 domestic-procurement political-pressure branches; distinct from J8 at G5"
+      }
+    ],
+    "shared_intersections": [
+      {
+        "node": "M1",
+        "description": "Skilled-migration demand connects P1 political/skills pathways with P2 housing-demand pathway"
+      },
+      {
+        "node": "M2",
+        "description": "Construction skills shortages share the P3 training-place bottleneck"
+      },
+      {
+        "node": "G5",
+        "description": "Historical capital gains intersect migration/property political incentives, housing turnover, returns, and F1"
+      },
+      {
+        "node": "C7",
+        "description": "Established housing turnover intersects P6 growing-family housing availability"
+      },
+      {
+        "node": "C8",
+        "description": "Existing-owner retention intersects housing turnover and U-series densification/holding costs"
+      },
+      {
+        "node": "T4",
+        "description": "Business margins connect training, large-firm feedback cycles, and investment-return pressures"
+      },
+      {
+        "node": "T5",
+        "description": "Business overheads connect P3 training, P4 procurement costs, P5 consumer prices, and the two conditional F5 wage/replacement-cost feedback branches."
+      },
+      {
+        "node": "T6",
+        "description": "Business-premises costs connect business pathways directly to land values"
+      },
+      {
+        "node": "T12",
+        "description": "Large-business productivity links P3 training issues and P4 delivery duration"
+      },
+      {
+        "node": "T14",
+        "description": "Small-firm proliferation joins P3 fragmentation and P4 contracting"
+      },
+      {
+        "node": "I7",
+        "description": "Subcontracting links P4 delivery, government-contract dependencies, and industry fragmentation"
+      },
+      {
+        "node": "U1",
+        "description": "Deferred infrastructure provision joins political urgency, procurement pipeline, and development economics"
+      },
+      {
+        "node": "U4",
+        "description": "Infrastructure cost per dwelling links housing development and urban-network costs"
+      },
+      {
+        "node": "U6",
+        "description": "Sprawl joins P4 infrastructure, P5 transport, and property retention/densification"
+      },
+      {
+        "node": "U9",
+        "description": "Maintenance burden connects P4 infrastructure economics with P5 council and utility charges"
+      },
+      {
+        "node": "P2",
+        "description": "Housing prices recur in P5 mortgage and P6 relocation mechanisms"
+      },
+      {
+        "node": "P5",
+        "description": "Cost-of-living top-level problem joins Q-series social cohesion, E-series spending, and F5 worker-motivation feedback."
+      },
+      {
+        "node": "Q1",
+        "description": "Shared gathering-place loss supports P6 access, private-circle, and trust branches"
+      },
+      {
+        "node": "Q8",
+        "description": "Necessary extra paid work joins P6 time-and-attention pathways"
+      },
+      {
+        "node": "Q14",
+        "description": "Housing-driven departures join P6 separation and established private-circle explanations"
+      },
+      {
+        "node": "L1",
+        "description": "Single shared endpoint; also a member of F1"
+      },
+      {
+        "node": "X3",
+        "description": "F5 rejoin J16: common motive to seek better-paid employment, returning to cost of living at P5."
+      }
+    ]
+  },
+  "source_annotations": {
+    "node_functions": {
+      "P1": "Perceived problem",
+      "P2": "Perceived problem",
+      "P3": "Perceived problem",
+      "P4": "Perceived problem",
+      "P5": "Perceived problem",
+      "P6": "Perceived problem; four accepted subchains Q1–Q31, including political-narrative feedback F4; completed in v10",
+      "M1": "**Shared intersection** between Chains 1 and 2",
+      "M2": "Underlying factor",
+      "M3": "Underlying factor",
+      "M4": "Underlying factor",
+      "M5": "Underlying factor; broader than physical construction costs",
+      "M6": "Cost branch of the land-capital mechanism",
+      "M7": "Financing branch; like-for-like comparison",
+      "M8": "**Rejoin J1**; common underlying mechanism",
+      "N2": "Economies-of-scale branch",
+      "N3": "Capital-capacity perspective; overlaps conceptually with M7",
+      "N1": "Explains how reduced project capacity can increase development costs",
+      "C1": "Shared wage-setting mechanism following M4, preceding the S2 split at C2",
+      "C2": "Shared S2 split: rising development costs or restricted cost pass-through",
+      "C3": "Underlying factor",
+      "C4": "Underlying factor",
+      "C5": "Occupants, whether owner-occupiers or renters",
+      "C6": "Underlying factor",
+      "C7": "Market-level effect, distinct from owner behaviour",
+      "C8": "Owner behaviour producing reduced turnover",
+      "C9": "Intersects speculative-return chain at G5",
+      "H1": "Underlying factor",
+      "H2": "Underlying factor",
+      "G1": "Separate branch of P1",
+      "G2": "Underlying factor",
+      "G3": "Underlying factor",
+      "G4": "Underlying factor",
+      "G5": "Underlying factor",
+      "F1A": "Speculative demand's price-support mechanism",
+      "F1B": "Speculative investment motive expressed through housing purchases",
+      "F1C": "Ongoing increase in real land values, distinct from their elevated level",
+      "F1D": "Expectations stimulated by the observed history of gains",
+      "T1": "Central training bottleneck",
+      "T2": "Small-employer branch",
+      "T3": "Small-employer branch",
+      "T4": "Shared cost-pressure node",
+      "T5": "Shared business-cost intersection; F5 feedback branches as well as T6 continuation",
+      "T6": "Business-land connection to L1",
+      "T7": "Large-employer branch",
+      "T8": "Selective-retention branch",
+      "T9": "**Rejoin J3**; large-to-small transition, not necessarily high overall turnover",
+      "T10": "Large-to-small transition; earnings, autonomy, or business ownership",
+      "T11": "Large-business employment conditions",
+      "T12": "Effect of selective departures on the remaining workforce",
+      "T13": "Competitive pressure **experienced by large businesses**",
+      "T14": "Growth of the **small-business sector**, not a condition within large firms",
+      "I1": "Infrastructure construction-cost pathway",
+      "I2": "Cost of more paid personnel and/or longer paid duration",
+      "I3": "Aggregate commercial cost of independent contractors' margins",
+      "I4": "Caused by coordination complexity or lower productivity",
+      "I5": "Additional paid organisational labour",
+      "I6": "Explains cumulative subcontractor margins",
+      "I7": "Intersects P3 industry fragmentation",
+      "I8": "Direct land-acquisition pathway",
+      "K1": "Permissive condition that can enable further escalation, not merely allocation of who pays",
+      "K2": "Pre-award risk allocation",
+      "K3": "Response during delivery",
+      "K4": "Potential effect of expected government cost absorption",
+      "K5": "Pre-award bargaining position",
+      "K6": "Limited practical leverage once underway",
+      "K7": "Shortage of substitutable delivery organisations",
+      "K8": "Project-switching barrier",
+      "K9": "Political barrier to refusing further payments",
+      "K10": "Switching difficulty; now linked through K13 and I7",
+      "K11": "Urgency; now extended through U1 and U10",
+      "K12": "Electoral lock-in; now linked to urgency and broad electorate exposure",
+      "K13": "Multiple delivery obligations make a principal-contractor substitution difficult",
+      "U1": "Deferred provision explains K11",
+      "U2": "Financial and political incentive",
+      "U3": "Cost relative to dwellings served",
+      "U4": "Shared housing/infrastructure intersection with M5",
+      "U5": "Core physical-density mechanism",
+      "U6": "Urban development pattern",
+      "U7": "Constraint on raising infrastructure revenue",
+      "U8": "Household affordability and fiscal pressure",
+      "U9": "Existing-network maintenance burden",
+      "U10": "Planning-delay explanation of K11",
+      "U11": "Planning workload",
+      "U12": "Physical extent of the planning task",
+      "U13": "Mechanism underpinning sprawl",
+      "U14": "Owner decision to retain rather than redevelop",
+      "U15": "Low ongoing landholding burden",
+      "U16": "Redevelopment feasibility constraint",
+      "U17": "Few contiguous sites available together",
+      "U18": "Political explanation of U15; intersects G3",
+      "U19": "Electoral reach of the infrastructure issue",
+      "U20": "Pressure extends beyond the newest development",
+      "U21": "Shared network reliance through established areas",
+      "U22": "Geographic cause of extensive reliance",
+      "R1": "Materials/procurement cost outcome; joins I1",
+      "R2": "Local production-cost branch; intersects T5",
+      "R3": "Procurement branch; operates where comparable cheaper imports exist",
+      "R4": "Institutional purchasing preference",
+      "R5": "Shared political incentive behind procurement preference",
+      "R6": "Organised supplier political influence",
+      "R7": "Political influence of workers and communities",
+      "R8": "Reinforcing condition for R6/R7; intersects U1",
+      "V1": "Household transport expenditure; increase in total spending, not necessarily per-unit prices",
+      "V2": "Compelled additional vehicle use beyond voluntarily chosen travel and ownership",
+      "V3": "Household transport-choice constraint",
+      "V4": "Physical and commercial constraint on viable public transport",
+      "E1": "Shared household home-cost split: finance, council rates, fixed and usage-based utility charges",
+      "E2": "Housing finance expenses; intersects existing P2",
+      "E3": "Household local-government charges; intersects U9 where infrastructure maintenance is a driver",
+      "E4": "Ongoing charge for network access regardless of consumption; intersects U9",
+      "E5": "Network costs recovered partly through the per-unit price; intersects U9",
+      "E6": "Consumer-price pathway; intersects T5 and participates in F5",
+      "X1": "F5-A: employer raises remuneration to retain workers seeking better pay",
+      "X2": "F5-B: cost of replacing employees who leave for better pay",
+      "X3": "F5 shared motivation arising from high living costs; rejoin J16",
+      "X4": "F5-B: departure response, conditional on available alternatives",
+      "W1": "P5 purchasing-power branch; shared outcome of income restraint and productive-investment displacement",
+      "W2": "Growing imbalance between extraction and genuine value production; P5 purchasing-power mechanism",
+      "W3": "Diversion away from productive capacity; includes investment-property acquisition and construction-financed asset accumulation",
+      "W4": "Relative investment incentive; split into G5 and W5",
+      "W5": "Business-side relative investment incentive; reconnects at T4",
+      "W6": "Household-income constraint; reconnects through sector-scoped T11",
+      "Q1": "P6 entry; split between free/low-cost and paid gathering places",
+      "Q2": "Non-commercial social-infrastructure loss; S25 split",
+      "Q3": "Loss of viable commercial alternatives; S26 split",
+      "Q4": "Closure or relocation reduces public accessibility; joins Q6",
+      "Q5": "Removes non-commercial space and can increase competition for discretionary spending; joins Q6",
+      "Q6": "Participation loss makes non-commercial spaces vulnerable to withdrawal",
+      "Q7": "Time constraint distinct from financial inability to attend paid venues",
+      "Q8": "Additional labour supplied to maintain household finances; reconnects at P5",
+      "Q9": "Financial constraint on commercial gathering places; reconnects at P5",
+      "Q10": "Viability-driven price pressure when fixed costs cannot be absorbed through already-exhausted margins",
+      "Q11": "Commercial viability pressure as patronage per business falls",
+      "Q12": "Conditional consequence of repurposing community premises for commercial use",
+      "Q13": "Visible community-level consequence of families or family members moving away",
+      "Q14": "Loss of local continuity when households need different homes but cannot find affordable ones nearby; split S28",
+      "Q15": "Growing families need more room, but suitable local houses are scarce because established homes seldom change hands, or are too expensive; splits at S30",
+      "Q16": "New households need a separate home but cannot afford to establish it near existing family and friends",
+      "Q17": "P6 social-entry consequence; established private get-togethers provide few entry points",
+      "Q18": "S29 split: gathering-place loss, ability to host, and increasing share of longstanding friendships",
+      "Q19": "Established residents have the space and resources for private gatherings, especially after adult children leave",
+      "Q20": "Departure leaves more household space for hosting; connects to the established housing-driven departure node Q14 where moves are compelled",
+      "Q21": "Growing proportion of remaining residents are members of established social circles",
+      "Q22": "Younger members disproportionately leave when they need housing of their own or larger homes; connects to Q14",
+      "Q23": "P6 social-trust consequence; split S31 between accepted blame narratives and lack of personal familiarity",
+      "Q24": "S32 split: repeated political messaging and demand for explanations; feedback loop F4 returns here",
+      "Q25": "Messaging explicitly supplies a group-blaming explanation for hardship; part of F4",
+      "Q26": "Political reward reinforces use of blame messages; part of F4",
+      "Q27": "Lack of personal familiarity leaves negative claims less readily contradicted; not a claim that unfamiliarity necessarily causes hostility",
+      "Q28": "Shared spaces for ordinary interaction become inaccessible; rejoins Q1",
+      "Q29": "S33 split between feeling stuck and lacking time or energy to investigate",
+      "Q30": "Continuing financial pressures narrow perceived options; rejoins P5",
+      "Q31": "Pressures and additional working hours reduce capacity to engage in detailed explanations; rejoins Q8",
+      "L1": "Proposed common factor; **one shared node**"
+    },
+    "edge_context": {
+      "M1|M2": "1, 2",
+      "M2|M3": "1, 2",
+      "M3|M4": "1, 2",
+      "C2|M5": "1, 2 — S2-A; S1 begins at M5",
+      "M5|M6": "1, 2 — S1-A",
+      "M6|M7": "1, 2 — S1-A",
+      "M7|M8": "1, 2 — S1-A, J1",
+      "M5|N1": "1, 2 — S1-B",
+      "N1|N2": "1, 2 — S1-B",
+      "N2|N3": "1, 2 — S1-B",
+      "N3|M8": "1, 2 — S1-B, J1",
+      "M8|L1": "1, 2 — common continuation",
+      "M4|C1": "1, 2 — shared S2 prefix, before split at C2",
+      "C1|C2": "1, 2 — shared S2 prefix; split at C2",
+      "C2|C3": "1, 2 — S2-B, limited cost pass-through",
+      "C3|C4": "1, 2 — S2-B",
+      "C4|C5": "1, 2 — S2-B",
+      "C5|C6": "1, 2 — S2-B",
+      "C6|C7": "1, 2 — S2-B",
+      "C7|C8": "1, 2 — S2-B",
+      "C8|C9": "1, 2 — S2-B",
+      "C9|G5": "1, 2 — intersection with Chain 3",
+      "P2|H1": "2",
+      "H1|H2": "2",
+      "H1|F1B": "2 → F1 — housing demand also driven by investment-housing demand",
+      "H2|M1": "2 — **intersection**",
+      "P1|G1": "3",
+      "G1|G2": "3",
+      "G1|M1": "3 → 1/2 — shared skilled-migration demand",
+      "G2|G3": "3",
+      "G3|G4": "3",
+      "G4|G5": "3",
+      "G5|L1": "1, 2, 3 — S2-B and J2 for Chains 1/2",
+      "L1|F1A": "F1 — feedback loop",
+      "F1A|F1B": "F1 — feedback loop",
+      "F1B|F1C": "F1 — feedback loop",
+      "F1C|F1D": "F1 — feedback loop",
+      "F1D|G5": "F1 — intersection with existing G5",
+      "M2|P3": "1, 2 → 4 — training shortfall contributes to skilled labour shortages",
+      "P3|T1": "4",
+      "T1|T2": "4 — S3-A",
+      "T2|T3": "4 — S3-A",
+      "T3|T4": "4 — S3-A",
+      "T4|T5": "4 — shared employer-cost continuation",
+      "T5|T6": "4 — shared employer-cost continuation",
+      "T6|L1": "4 — J4",
+      "T1|T7": "4 — S3-B",
+      "T7|T8": "4 — S4-A",
+      "T8|T9": "4 — J3",
+      "T7|T4": "4 — S4-B; direct margin constraint",
+      "T4|T12": "4, F3 — lower large-firm productivity contributes to margins",
+      "T12|T9": "4, F3 — J3",
+      "T9|T10": "4, F2, F3",
+      "T10|T11": "4, F2, F3",
+      "T11|T4": "4, F2, F3 — feedback returns to shared margin node",
+      "T4|T13": "F2",
+      "T13|T14": "F2",
+      "T14|T9": "F2 — loop closes",
+      "P4|I1": "5 — S5-A; S6 split",
+      "P4|I8": "5 — S5-B",
+      "I8|L1": "5 — J5; direct land-acquisition path",
+      "I1|I2": "5 — S6-A; S7 split",
+      "I1|I3": "5 — S6-B",
+      "I2|I4": "5 — S7-A; S8 split",
+      "I2|I5": "5 — S7-B",
+      "I4|T12": "5 → 4 — S8-A, lower productivity",
+      "I4|I7": "5 — S8-B, subcontracting delays",
+      "I5|I7": "5 — administration caused by subcontract complexity",
+      "I3|I6": "5 — subcontractor margin stacking",
+      "I6|I7": "5 — multiple independent subcontractors",
+      "I7|T14": "5 → 4 — fragmentation intersection",
+      "P4|K1": "5 — S5-C, government tolerance of overruns can enable cost escalation; S9 split",
+      "K1|K2": "5 — S9-A, contract risk allocation",
+      "K1|K3": "5 — S9-B, additional payments",
+      "K1|K4": "5 — S9-C, weaker cost-control incentive",
+      "K2|K5": "5 — S9-A, pre-award leverage",
+      "K3|K6": "5 — S9-B, limited enforcement",
+      "K4|K6": "5 — S9-C, rejoins S9-B at K6",
+      "K5|K7": "5 — S9-A, shortage of principal substitutes",
+      "K6|K8": "5 — S10-A, replacement barrier",
+      "K6|K9": "5 — S10-B, cancellation barrier",
+      "K8|K10": "5 — S11-A, contractual dependencies",
+      "K10|K13": "5 — S11-A, interdependent contractual obligations",
+      "K13|I7": "5 — S11-A, joins established subcontracting network",
+      "K8|K7": "5 — S11-B, rejoins S9-A at K7",
+      "K9|K11": "5 — S12-A, infrastructure urgency; continues via U1 and U10",
+      "K9|K12": "5 — S12-B, electoral commitments; continues via U1 and U19",
+      "K7|T14": "5 → 4 — small-firm fragmentation intersection",
+      "K11|U1": "5 — S13-A, urgent need following deferred provision",
+      "U1|U2": "5 — weak incentive to build in advance",
+      "U2|U3": "5 — S14-A, poor return on provision",
+      "U3|U4": "5 — high infrastructure cost per dwelling",
+      "U4|U5": "5, 1/2 — shared network-density mechanism",
+      "U5|U6": "5, 1/2 — sprawl",
+      "U2|U7": "5 — S14-B, revenue-raising resistance",
+      "U7|U8": "5 — pressure to contain household charges",
+      "U8|U9": "5 — existing maintenance burden",
+      "U9|U5": "5 — J6, sparse network increases per-household maintenance",
+      "K11|U10": "5 — S13-B, planning delay",
+      "U10|U11": "5 — greater planning burden",
+      "U11|U12": "5 — extensive networks",
+      "U12|U6": "5 — planning branch rejoins at sprawl",
+      "U6|U13": "5, 1/2 — inadequate densification",
+      "U13|U14": "5 — S15-A, redevelopment incentive",
+      "U14|C8": "5 → 1/2 — J7, owners retain properties",
+      "U13|U16": "5 — S15-B, site assembly",
+      "U16|U17": "5 — fragmented contiguous opportunities",
+      "U17|C8": "5 → 1/2 — J7, limited property turnover",
+      "C8|U15": "5 — S16-B, low-cost landholding",
+      "U15|U18": "5 — political resistance to increased holding costs",
+      "U18|G3": "5 → 3 — financially dependent constituency",
+      "M5|U4": "1, 2 → 5 — shared cost per dwelling, no intermediary servicing-cost node",
+      "K12|U1": "5 — S17-A, infrastructure urgency; rejoins K11 branch",
+      "K12|U19": "5 — S17-B, broad electoral exposure",
+      "U19|U20": "5 — shared networks under pressure",
+      "U20|U21": "5 — developments dependent on existing networks",
+      "U21|U22": "5 — geographic extent of dependence",
+      "U22|U6": "5 — sprawl intersection; shared continuation",
+      "I1|R1": "5 — S5-F, materials/procurement split S18",
+      "R1|R2": "5 — S18-A, domestic production-cost branch",
+      "R2|T5": "5 → 4 — shared business-overhead intersection",
+      "R1|R3": "5 — S18-B, limited import substitution",
+      "R3|R4": "5 — domestic procurement preference",
+      "R4|R5": "5 — political incentives for domestic procurement",
+      "R5|R6": "5 — S19-A, supplier lobbying",
+      "R5|R7": "5 — S19-B, local employment electoral incentives",
+      "R6|R8": "5 — J17, limited project pipeline reinforces lobbying",
+      "R7|R8": "5 — J17, limited project pipeline reinforces employment pressure",
+      "R8|U1": "5 — rejoins existing deferred-provision network",
+      "P5|V1": "6 — S20-A, household transport",
+      "V1|V2": "6 — additional necessary vehicle use",
+      "V2|V3": "6 — lack of viable public transport",
+      "V3|V4": "6 — dispersed trips and low passenger density",
+      "V4|U6": "6 → 5 — existing urban-sprawl intersection",
+      "P5|E1": "6 — S20-B, home servicing costs; S21 split",
+      "E1|E2": "6 — S21-A, housing finance",
+      "E2|P2": "6 → 2 — mortgage repayment intersection",
+      "E1|E3": "6 — S21-B, council rates",
+      "E3|U9": "6 → 5 — infrastructure maintenance contribution to rates",
+      "E1|E4": "6 — S21-C, ongoing fixed utility supply charges",
+      "E4|U9": "6 → 5 — network maintenance recovered through fixed charge",
+      "E1|E5": "6 — S21-D, usage-based utility charges",
+      "E5|U9": "6 → 5 — network maintenance recovered through usage prices; J9",
+      "P5|E6": "6 — S20-C, goods and services",
+      "E6|T5": "6 → 4, F5 — shared business overheads intersection",
+      "T5|X1": "6, F5-A — increased wage costs of retention",
+      "X1|X3": "6, F5-A — worker pressure to seek better pay",
+      "T5|X2": "6, F5-B — recruitment and staff-replacement costs",
+      "X2|X4": "6, F5-B — departures requiring replacement",
+      "X4|X3": "6, F5-B — seeking higher-paid employment motivates departures; J16",
+      "X3|P5": "6, F5-A/B — high living costs generate earnings pressure; closes F5 feedback",
+      "P5|W1": "6 — S20-D, household purchasing-power branch",
+      "W1|W2": "6 — S22-A, extraction outpacing real value creation",
+      "W2|W3": "6 — productive-investment displacement",
+      "W3|W4": "6 — comparative attractiveness of property assets",
+      "W4|G5": "6 → 3, F1 — S23-A, reliable property capital gains",
+      "W4|W5": "6 — S23-B, poorer comparative business returns",
+      "W5|T4": "6 → 4 — business-margin intersection",
+      "W1|W6": "6 — S22-B, earned-income constraint",
+      "W6|T11": "6 → 4 — large-business wage restraint intersection",
+      "P6|Q1": "7 — initial agreed P6 gathering-places branch; S24 split",
+      "Q1|Q2": "7 — S24-A, loss of free/low-cost places; S25 split",
+      "Q1|Q3": "7 — S24-B, paid places less accessible; S26 split",
+      "Q2|Q4": "7 — S25-A, closure or less-accessible relocation",
+      "Q4|Q6": "7 — J10, reduced use underlying withdrawn facilities",
+      "Q2|Q5": "7 — S25-B, conversion to commercial premises",
+      "Q5|Q6": "7 — J10, reduced use underlying repurposing",
+      "Q6|Q7": "7 — less discretionary time for community participation",
+      "Q7|Q8": "7 — time displaced by additional paid work",
+      "Q8|P5": "7 → 6 — household expenses drive additional paid work; J11",
+      "Q3|Q9": "7 — S26-A, lack of discretionary spending",
+      "Q9|P5": "7 → 6 — paid-participation income constraint; J11",
+      "Q3|Q10": "7 — S26-B, price pressure on paid venues",
+      "Q10|Q11": "7 — fewer customers over whom to spread fixed costs",
+      "Q11|Q12": "7 — competition for constrained discretionary spending",
+      "Q12|Q5": "7 — repurposing to commercial premises can increase competition",
+      "P6|Q13": "7 — S27-B, community members see each other less",
+      "Q13|Q14": "7 — family members moving away",
+      "Q14|Q15": "7 — S28-A, growing families need bigger homes",
+      "Q15|P2": "7 → 2 — S30-A, larger homes too expensive nearby; J12",
+      "Q15|C7": "7 → 1/2 — S30-B, suitable larger homes rarely come up for sale; J15",
+      "Q14|Q16": "7 — S28-B, new couples need homes of their own",
+      "Q16|P2": "7 → 2 — unaffordable separate homes nearby; J12",
+      "P6|Q17": "7 — S27-C, newcomers struggle to make friends",
+      "Q17|Q18": "7 — local get-togethers concentrated among existing friends at home; S29 split",
+      "Q18|Q1": "7 → 7 — S29-A, shared gathering places lost; J13",
+      "Q18|Q19": "7 — S29-B, established residents can host at home",
+      "Q19|Q20": "7 — room for private gatherings after adult children move away",
+      "Q20|Q14": "7 — J14, housing-driven departures of adult children",
+      "Q18|Q21": "7 — S29-C, established friendship circles remain prominent",
+      "Q21|Q22": "7 — younger community members make up a smaller share",
+      "Q22|Q14": "7 — J14, young people leaving because of local housing prices",
+      "P6|Q23": "7 — S27-D, suspicion between communities; S31 split",
+      "Q23|Q24": "7 — S31-A, growing belief in blame narratives; S32 split",
+      "Q23|Q27": "7 — S31-B, lack of personal familiarity",
+      "Q27|Q28": "7 — fewer opportunities to establish everyday trust",
+      "Q28|Q1": "7 → 7 — rejoins shared gathering-places mechanism at Q1 (J13)",
+      "Q24|Q25": "7, F4 — messages encouraging blame; S32-A",
+      "Q25|Q26": "7, F4 — political support encourages repeated messages",
+      "Q26|Q24": "7, F4 — political support reinforced by existing beliefs; closes loop",
+      "Q24|Q29": "7 — S32-B, people seek understandable explanations; S33 split",
+      "Q29|Q30": "7 — S33-A, no clear way forward",
+      "Q30|P5": "7 → 6 — cost-of-living pressure; existing P5 intersection",
+      "Q29|Q31": "7 — S33-B, little time or energy to investigate",
+      "Q31|Q8": "7 → 7 — additional necessary work reduces available attention; shared Q8"
+    },
+    "source_lines": {
+      "nodes": {
+        "P1": 56,
+        "P2": 57,
+        "P3": 58,
+        "P4": 59,
+        "P5": 60,
+        "P6": 61,
+        "M1": 62,
+        "M2": 63,
+        "M3": 64,
+        "M4": 65,
+        "M5": 66,
+        "M6": 67,
+        "M7": 68,
+        "M8": 69,
+        "N2": 70,
+        "N3": 71,
+        "N1": 72,
+        "C1": 73,
+        "C2": 74,
+        "C3": 75,
+        "C4": 76,
+        "C5": 77,
+        "C6": 78,
+        "C7": 79,
+        "C8": 80,
+        "C9": 81,
+        "H1": 82,
+        "H2": 83,
+        "G1": 84,
+        "G2": 85,
+        "G3": 86,
+        "G4": 87,
+        "G5": 88,
+        "F1A": 89,
+        "F1B": 90,
+        "F1C": 91,
+        "F1D": 92,
+        "T1": 93,
+        "T2": 94,
+        "T3": 95,
+        "T4": 96,
+        "T5": 97,
+        "T6": 98,
+        "T7": 99,
+        "T8": 100,
+        "T9": 101,
+        "T10": 102,
+        "T11": 103,
+        "T12": 104,
+        "T13": 105,
+        "T14": 106,
+        "I1": 107,
+        "I2": 108,
+        "I3": 109,
+        "I4": 110,
+        "I5": 111,
+        "I6": 112,
+        "I7": 113,
+        "I8": 114,
+        "K1": 115,
+        "K2": 116,
+        "K3": 117,
+        "K4": 118,
+        "K5": 119,
+        "K6": 120,
+        "K7": 121,
+        "K8": 122,
+        "K9": 123,
+        "K10": 124,
+        "K11": 125,
+        "K12": 126,
+        "K13": 127,
+        "U1": 128,
+        "U2": 129,
+        "U3": 130,
+        "U4": 131,
+        "U5": 132,
+        "U6": 133,
+        "U7": 134,
+        "U8": 135,
+        "U9": 136,
+        "U10": 137,
+        "U11": 138,
+        "U12": 139,
+        "U13": 140,
+        "U14": 141,
+        "U15": 142,
+        "U16": 143,
+        "U17": 144,
+        "U18": 145,
+        "U19": 146,
+        "U20": 147,
+        "U21": 148,
+        "U22": 149,
+        "R1": 150,
+        "R2": 151,
+        "R3": 152,
+        "R4": 153,
+        "R5": 154,
+        "R6": 155,
+        "R7": 156,
+        "R8": 157,
+        "V1": 158,
+        "V2": 159,
+        "V3": 160,
+        "V4": 161,
+        "E1": 162,
+        "E2": 163,
+        "E3": 164,
+        "E4": 165,
+        "E5": 166,
+        "E6": 167,
+        "X1": 168,
+        "X2": 169,
+        "X3": 170,
+        "X4": 171,
+        "W1": 172,
+        "W2": 173,
+        "W3": 174,
+        "W4": 175,
+        "W5": 176,
+        "W6": 177,
+        "Q1": 178,
+        "Q2": 179,
+        "Q3": 180,
+        "Q4": 181,
+        "Q5": 182,
+        "Q6": 183,
+        "Q7": 184,
+        "Q8": 185,
+        "Q9": 186,
+        "Q10": 187,
+        "Q11": 188,
+        "Q12": 189,
+        "Q13": 190,
+        "Q14": 191,
+        "Q15": 192,
+        "Q16": 193,
+        "Q17": 194,
+        "Q18": 195,
+        "Q19": 196,
+        "Q20": 197,
+        "Q21": 198,
+        "Q22": 199,
+        "Q23": 200,
+        "Q24": 201,
+        "Q25": 202,
+        "Q26": 203,
+        "Q27": 204,
+        "Q28": 205,
+        "Q29": 206,
+        "Q30": 207,
+        "Q31": 208,
+        "L1": 209
+      },
+      "edges": {
+        "M1|M2": 910,
+        "M2|M3": 911,
+        "M3|M4": 912,
+        "C2|M5": 913,
+        "M5|M6": 914,
+        "M6|M7": 915,
+        "M7|M8": 916,
+        "M5|N1": 917,
+        "N1|N2": 918,
+        "N2|N3": 919,
+        "N3|M8": 920,
+        "M8|L1": 921,
+        "M4|C1": 922,
+        "C1|C2": 923,
+        "C2|C3": 924,
+        "C3|C4": 925,
+        "C4|C5": 926,
+        "C5|C6": 927,
+        "C6|C7": 928,
+        "C7|C8": 929,
+        "C8|C9": 930,
+        "C9|G5": 931,
+        "P2|H1": 932,
+        "H1|H2": 933,
+        "H1|F1B": 934,
+        "H2|M1": 935,
+        "P1|G1": 936,
+        "G1|G2": 937,
+        "G1|M1": 938,
+        "G2|G3": 939,
+        "G3|G4": 940,
+        "G4|G5": 941,
+        "G5|L1": 942,
+        "L1|F1A": 943,
+        "F1A|F1B": 944,
+        "F1B|F1C": 945,
+        "F1C|F1D": 946,
+        "F1D|G5": 947,
+        "M2|P3": 948,
+        "P3|T1": 949,
+        "T1|T2": 950,
+        "T2|T3": 951,
+        "T3|T4": 952,
+        "T4|T5": 953,
+        "T5|T6": 954,
+        "T6|L1": 955,
+        "T1|T7": 956,
+        "T7|T8": 957,
+        "T8|T9": 958,
+        "T7|T4": 959,
+        "T4|T12": 960,
+        "T12|T9": 961,
+        "T9|T10": 962,
+        "T10|T11": 963,
+        "T11|T4": 964,
+        "T4|T13": 965,
+        "T13|T14": 966,
+        "T14|T9": 967,
+        "P4|I1": 968,
+        "P4|I8": 969,
+        "I8|L1": 970,
+        "I1|I2": 971,
+        "I1|I3": 972,
+        "I2|I4": 973,
+        "I2|I5": 974,
+        "I4|T12": 975,
+        "I4|I7": 976,
+        "I5|I7": 977,
+        "I3|I6": 978,
+        "I6|I7": 979,
+        "I7|T14": 980,
+        "P4|K1": 981,
+        "K1|K2": 982,
+        "K1|K3": 983,
+        "K1|K4": 984,
+        "K2|K5": 985,
+        "K3|K6": 986,
+        "K4|K6": 987,
+        "K5|K7": 988,
+        "K6|K8": 989,
+        "K6|K9": 990,
+        "K8|K10": 991,
+        "K10|K13": 992,
+        "K13|I7": 993,
+        "K8|K7": 994,
+        "K9|K11": 995,
+        "K9|K12": 996,
+        "K7|T14": 997,
+        "K11|U1": 998,
+        "U1|U2": 999,
+        "U2|U3": 1000,
+        "U3|U4": 1001,
+        "U4|U5": 1002,
+        "U5|U6": 1003,
+        "U2|U7": 1004,
+        "U7|U8": 1005,
+        "U8|U9": 1006,
+        "U9|U5": 1007,
+        "K11|U10": 1008,
+        "U10|U11": 1009,
+        "U11|U12": 1010,
+        "U12|U6": 1011,
+        "U6|U13": 1012,
+        "U13|U14": 1013,
+        "U14|C8": 1014,
+        "U13|U16": 1015,
+        "U16|U17": 1016,
+        "U17|C8": 1017,
+        "C8|U15": 1018,
+        "U15|U18": 1019,
+        "U18|G3": 1020,
+        "M5|U4": 1021,
+        "K12|U1": 1022,
+        "K12|U19": 1023,
+        "U19|U20": 1024,
+        "U20|U21": 1025,
+        "U21|U22": 1026,
+        "U22|U6": 1027,
+        "I1|R1": 1028,
+        "R1|R2": 1029,
+        "R2|T5": 1030,
+        "R1|R3": 1031,
+        "R3|R4": 1032,
+        "R4|R5": 1033,
+        "R5|R6": 1034,
+        "R5|R7": 1035,
+        "R6|R8": 1036,
+        "R7|R8": 1037,
+        "R8|U1": 1038,
+        "P5|V1": 1039,
+        "V1|V2": 1040,
+        "V2|V3": 1041,
+        "V3|V4": 1042,
+        "V4|U6": 1043,
+        "P5|E1": 1044,
+        "E1|E2": 1045,
+        "E2|P2": 1046,
+        "E1|E3": 1047,
+        "E3|U9": 1048,
+        "E1|E4": 1049,
+        "E4|U9": 1050,
+        "E1|E5": 1051,
+        "E5|U9": 1052,
+        "P5|E6": 1053,
+        "E6|T5": 1054,
+        "T5|X1": 1055,
+        "X1|X3": 1056,
+        "T5|X2": 1057,
+        "X2|X4": 1058,
+        "X4|X3": 1059,
+        "X3|P5": 1060,
+        "P5|W1": 1062,
+        "W1|W2": 1063,
+        "W2|W3": 1064,
+        "W3|W4": 1065,
+        "W4|G5": 1066,
+        "W4|W5": 1067,
+        "W5|T4": 1068,
+        "W1|W6": 1069,
+        "W6|T11": 1070,
+        "P6|Q1": 1072,
+        "Q1|Q2": 1073,
+        "Q1|Q3": 1074,
+        "Q2|Q4": 1075,
+        "Q4|Q6": 1076,
+        "Q2|Q5": 1077,
+        "Q5|Q6": 1078,
+        "Q6|Q7": 1079,
+        "Q7|Q8": 1080,
+        "Q8|P5": 1081,
+        "Q3|Q9": 1082,
+        "Q9|P5": 1083,
+        "Q3|Q10": 1084,
+        "Q10|Q11": 1085,
+        "Q11|Q12": 1086,
+        "Q12|Q5": 1087,
+        "P6|Q13": 1088,
+        "Q13|Q14": 1089,
+        "Q14|Q15": 1090,
+        "Q15|P2": 1091,
+        "Q15|C7": 1092,
+        "Q14|Q16": 1093,
+        "Q16|P2": 1094,
+        "P6|Q17": 1095,
+        "Q17|Q18": 1096,
+        "Q18|Q1": 1097,
+        "Q18|Q19": 1098,
+        "Q19|Q20": 1099,
+        "Q20|Q14": 1100,
+        "Q18|Q21": 1101,
+        "Q21|Q22": 1102,
+        "Q22|Q14": 1103,
+        "P6|Q23": 1104,
+        "Q23|Q24": 1105,
+        "Q23|Q27": 1106,
+        "Q27|Q28": 1107,
+        "Q28|Q1": 1108,
+        "Q24|Q25": 1109,
+        "Q25|Q26": 1110,
+        "Q26|Q24": 1111,
+        "Q24|Q29": 1112,
+        "Q29|Q30": 1113,
+        "Q30|P5": 1114,
+        "Q29|Q31": 1115,
+        "Q31|Q8": 1116
+      }
+    }
+  },
+  "presentation": {
+    "node_descriptions": {
+      "P1": "Some Australians see migration as too high, especially when housing and services are under pressure. This network looks past the headline number to the demand for skilled workers and the economic pressures influencing migration policy.",
+      "P2": "High housing prices make it harder to buy a home and increase the financial pressure on households. Demand for housing matters, but so do expensive development sites and the expectation that property values will keep rising.",
+      "P3": "Too few people are being trained for skilled work because employers are not providing enough training places. This leaves industries short of experienced workers and makes it harder to meet demand for construction and other essential services.",
+      "P4": "Building and upgrading public infrastructure costs too much. Expensive land, fragmented contracting, delays and weak bargaining positions increase the cost of delivering the roads, utilities and facilities communities need.",
+      "P5": "Housing, transport, utilities and everyday goods consume a growing share of household income. Higher necessary expenses leave people with less money and fewer choices, while the same pressures can also raise the cost of running a business.",
+      "P6": "Community ties weaken when people have fewer places to meet, less time to socialise and greater difficulty staying near family and friends. Reduced contact between communities can also make mistrust and divisive stories easier to spread.",
+      "M1": "When employers cannot find enough trained workers locally, they seek skilled migrants to fill the gaps. This demand helps sustain migration even while population growth adds pressure to housing.",
+      "M2": "A shortage of qualified construction workers makes it harder to build the housing and infrastructure people need. When workers leave for better opportunities and too few replacements are trained, employers look further afield to fill vacancies.",
+      "M3": "Construction workers who can earn more or find better conditions elsewhere may leave the industry. Employers then struggle to replace their experience, adding to skilled labour shortages.",
+      "M4": "When construction pay and conditions fall behind other available jobs, workers have more reason to leave. This pressure can exist even if wages do not actually fall, because competing jobs become more attractive.",
+      "M5": "The cost of getting a housing development from land purchase to finished homes rises when more money is tied up in the land. Bigger loans, interest during construction and higher costs per dwelling make projects harder to deliver affordably.",
+      "M6": "Developers often have to pay for land long before they can sell completed homes. More expensive sites mean more money must be borrowed or tied up, raising interest and the cost of holding the development through to sale.",
+      "M7": "A developer needs more funding for each home when the land beneath the project becomes more expensive. That leaves more money exposed for longer and raises the cost of financing the same number of homes.",
+      "M8": "When development land costs more, the amount a developer must pay for the site rises for each home it can build there. Even a well-designed project needs more money up front for the same dwelling yield.",
+      "N2": "Money committed to one expensive development cannot also fund another. As land purchases absorb more capital, developers have less capacity to start other housing projects, reducing the number they can deliver at once.",
+      "N3": "Higher site prices lock more of a developer's available funds into each project before any homes are sold. That leaves less capital for other projects and can slow the supply of new housing.",
+      "N1": "When developers can afford fewer projects at once, they may lose savings from buying materials in bulk, keeping crews busy and sharing fixed costs across multiple sites. That can increase the cost of each home they build.",
+      "C1": "When builders and developers are struggling to maintain their margins, they look for costs they can control. Labour is a major expense, so they may hold down pay rises, reduce conditions or push for cheaper staffing.",
+      "C2": "When a home costs more to develop but cannot sell for much more, builders and developers have less money left over. This encourages cutting costs and limiting raises, even when workers have better-paid opportunities elsewhere.",
+      "C3": "Builders cannot always charge buyers enough to cover rising development costs. Buyers and renters have limited budgets, so some extra costs must be absorbed by the businesses delivering housing.",
+      "C4": "When buyers can compare new homes and choose what they can afford, developers compete hard on price. That limits how much a builder can increase the sale price to recover higher costs.",
+      "C5": "People need housing they can actually afford, whether they buy a home or rent it. Their incomes and household budgets limit how much can be charged for the homes being built.",
+      "C6": "A large share of demand for newly available housing comes from people entering the market, including new households and arrivals. Existing owners holding on to their homes leaves fewer established properties available to buy.",
+      "C7": "When fewer established homes come onto the market, people looking to move have fewer options. More demand is pushed towards newly built homes, while turnover in existing neighbourhoods remains low.",
+      "C8": "Owners who expect their property to keep gaining value have a reason to hold on to it. That reduces the number of existing homes offered for sale and can leave sites underused rather than redeveloped.",
+      "C9": "When owners expect further capital gains, keeping a property can look more rewarding than selling it now. That expectation encourages holding on to homes and development sites, even when others want to buy or use them.",
+      "H1": "More households competing for homes sustain demand and put upward pressure on prices. That includes demand from population growth as well as people purchasing housing because they expect it to appreciate in value.",
+      "H2": "Migration increases the number of people who need a home in Australia. If housing supply does not keep up, competition for available homes grows and adds to price pressure.",
+      "G1": "Governments face pressure to maintain migration when employers need skills and property owners have an interest in strong housing demand. Those pressures can persist even when voters are concerned about the number of arrivals.",
+      "G2": "Many people and institutions have a financial interest in preventing property prices from falling. This creates pressure for policies that support housing demand and help maintain the value of existing properties.",
+      "G3": "As more households and investors rely on the value of their property, more people have a financial stake in prices continuing to rise. That makes changes which could lower prices harder to pursue politically.",
+      "G4": "When property has repeatedly delivered large gains, more people buy it as an investment. This strengthens the expectation that rising prices are normal and worth protecting.",
+      "G5": "A long history of gains makes property look like a dependable way to build wealth. Much of that rise comes from the land beneath the buildings, encouraging buyers to expect future gains and pay more today.",
+      "F1A": "Investors bidding for property add to the demand competing for available housing. That demand supports higher sale prices, including the price buyers are willing to pay for the land underneath.",
+      "F1B": "People buy housing partly because they expect its value to rise, not just because they need somewhere to live. Investment demand then competes alongside demand for homes to occupy.",
+      "F1C": "Land prices keep rising beyond general inflation, even where the buildings and services on that land have not improved. Those gains reward existing owners and make the next purchase more expensive.",
+      "F1D": "When past price rises seem dependable, buyers expect more capital gains ahead. That expectation makes paying today's high price seem worthwhile and helps keep investment demand strong.",
+      "T1": "Apprentices and other trainees need employers willing and able to train them on the job. When too few places are offered, willing learners cannot become the skilled workers industries need.",
+      "T2": "Small and medium businesses may be unable or unwilling to take on enough apprentices. The wages, supervision and time needed for training can be difficult to afford when business finances are tight.",
+      "T3": "Training costs money now, while the benefits often arrive years later. Businesses under financial pressure may cut training first to keep day-to-day operations running, leaving fewer places for new workers.",
+      "T4": "When everyday costs rise faster than a business can raise its prices, less money is left over after expenses. Tight margins encourage employers to limit pay rises, training and investment, making it harder for businesses to grow stronger.",
+      "T5": "Businesses have to pay for premises, staff, utilities and other running costs before they can turn a profit. High overheads squeeze margins and may be passed on through higher prices for the goods and services people buy.",
+      "T6": "Expensive land makes shops, workshops, offices and industrial sites costly to buy or rent. Businesses carry those premises costs year after year, leaving less money for wages, training, investment and affordable prices.",
+      "T7": "Large employers can train many workers, but they need the staff, time and funding to do it. When those resources are stretched, they offer fewer training places than the industry needs.",
+      "T8": "Training new workers depends on experienced staff who can teach and supervise them. When businesses lose too many of those workers, fewer people remain to support apprentices and other trainees.",
+      "T9": "Experienced, capable workers may leave large firms for better pay, independence or opportunities in smaller businesses. Losing these particular people reduces the skills available to supervise others and deliver work efficiently.",
+      "T10": "Smaller firms and self-employment can offer skilled workers better earnings, more control over their work or a chance to build their own business. These opportunities draw capable people away from larger employers.",
+      "T11": "Large businesses facing tight margins may limit pay rises and offer less attractive conditions than smaller competitors or self-employment. That makes it harder to keep capable workers, which can further weaken the business.",
+      "T12": "When experienced workers leave a large business, those who remain may have fewer people to guide work, solve problems and coordinate teams. The business gets less work done for each employee it pays, raising delivery costs.",
+      "T13": "As more skilled workers establish small firms or work for themselves, large businesses face more competition for customers and staff. This can squeeze their margins and make it harder to improve pay and conditions.",
+      "T14": "An industry made up of many small firms and sole traders often needs more separate contracts, handovers and coordination to deliver large projects. It can also make it harder to assemble the scale needed for major works and training.",
+      "I1": "The cost of delivering an infrastructure project rises when more staff time is needed, subcontractors add their own charges and materials cost more. Those expenses flow into the price governments and communities pay for the finished project.",
+      "I2": "A project costs more in wages and salaries when it takes longer to finish or needs extra people to manage the work. More paid hours increase the final bill, even if the amount of infrastructure being built stays the same.",
+      "I3": "When a project passes through several subcontractors, each business needs to cover its costs and earn a profit. Those separate margins build up in the price charged to deliver the final project.",
+      "I4": "Infrastructure projects take longer when work is slowed by complicated coordination or teams cannot deliver as much work per employee. Delays keep staff, equipment and management costs running for longer.",
+      "I5": "Multiple contractors need people to organise schedules, manage contracts, check work and resolve handovers between firms. More layers of coordination mean more paid staff and higher project costs.",
+      "I6": "Each separate contractor must charge enough to stay in business and make a return. When many firms contribute to one project, their separate charges can add up to more than a simpler delivery arrangement.",
+      "I7": "Large infrastructure projects can involve many separate subcontractors, each with its own staff, contracts and schedules. Coordinating that work creates extra administration, delays and costs, especially when the industry has few firms able to handle large projects themselves.",
+      "I8": "Infrastructure needs land for roads, rail corridors, utilities and public facilities. When the required land is expensive, governments must spend more to secure suitable sites before the project can even be built.",
+      "K1": "When governments repeatedly accept higher project costs after work has started, the final price can keep rising. Contractors may face less pressure to prevent overruns when they expect extra costs to be covered.",
+      "K2": "Some infrastructure contracts leave government responsible for much of the cost if things go wrong. When only a few contractors can deliver a major project, they can negotiate terms that transfer more financial risk to taxpayers.",
+      "K3": "Governments sometimes agree to pay contractors more after a project has begun because stopping work or changing contractor would be too difficult or costly. These payments increase the final price of the project.",
+      "K4": "If contractors expect governments to cover additional costs, they have less financial reason to prevent every overrun. That can allow costs to rise further during delivery.",
+      "K5": "When governments have few realistic alternatives for major projects, capable contractors have more power to set prices and contract terms. Governments may accept expensive conditions rather than lose the ability to deliver needed infrastructure.",
+      "K6": "Once a major project is underway, government may have little practical choice but to continue with the contractor. Replacing the firm can disrupt contracts, delay essential works and carry serious political costs.",
+      "K7": "There are often too few firms able to take responsibility for a major infrastructure project from start to finish. That limits competition for contracts and makes it harder to replace a contractor that is performing poorly.",
+      "K8": "Switching contractors partway through a major project can mean untangling many agreements, finding another capable firm and paying for delays. Those obstacles make governments reluctant to change course, even when costs rise.",
+      "K9": "Abandoning a major project can leave communities without needed infrastructure and governments facing anger over broken promises. That political cost can make it harder to refuse extra payments or cancel expensive contracts.",
+      "K10": "A major project may depend on many contracts, work packages and agreed responsibilities that all fit together. Replacing the main contractor can disturb those arrangements and make delays or extra costs difficult to avoid.",
+      "K11": "When essential infrastructure has been delayed for years, demand can become urgent before work begins. Governments then have less freedom to wait, redesign or change contractors when delivery problems arise.",
+      "K12": "Once a government has promised to finish a major project, failure to deliver can affect voters across a wide area. That public pressure can make governments more willing to accept higher costs to get the work completed.",
+      "K13": "When different subcontractors rely on each other's work, changing one major contractor can affect many other agreements. Sorting out those obligations takes time and money, making a replacement difficult once construction is underway.",
+      "U1": "When infrastructure is repeatedly put off, growing communities keep relying on networks that were never expanded in time. Eventually the work becomes urgent, narrowing the options for delivery and increasing pressure to proceed at almost any cost.",
+      "U2": "Providing infrastructure before an area is fully developed can require large spending with little immediate revenue or political reward. That encourages delays until enough people are already affected to demand action.",
+      "U3": "When roads, pipes and other networks must stretch long distances to serve relatively few homes, the cost is high compared with the number of households benefiting. This makes early infrastructure investment harder to justify financially.",
+      "U4": "Spreading new infrastructure across a small number of homes makes the cost per dwelling high. Those costs can increase development prices and make it harder to provide services before neighbourhoods are fully occupied.",
+      "U5": "When homes are spread far apart, each metre of road, pipe or cable serves fewer households. More infrastructure is needed per home, increasing both the cost to build networks and the cost to maintain them.",
+      "U6": "Low-density sprawl spreads homes and destinations across a large area. Longer roads and utility networks cost more to build and maintain, make public transport harder to run and leave fewer opportunities to use existing land efficiently.",
+      "U7": "Higher rates, taxes and infrastructure charges can be unpopular with households already under pressure. Governments may therefore avoid raising enough revenue for early infrastructure upgrades, making delays more likely.",
+      "U8": "When maintaining existing roads and utility networks is already expensive, households resist paying even more through rates and service charges. This pressure makes it harder for governments and providers to fund new infrastructure ahead of demand.",
+      "U9": "In spread-out suburbs, long roads, pipes and cables are maintained for relatively few households. The cost per home is higher and can feed into council rates, utility bills and pressure on public budgets.",
+      "U10": "Large infrastructure networks can take years of planning and approvals before construction starts. Long lead times mean communities can be waiting for essential upgrades even after the need is clear.",
+      "U11": "Planning infrastructure across a large area means dealing with more routes, landowners, approvals and connections to existing services. That extra work makes planning more complicated and takes longer.",
+      "U12": "Spread-out development requires extensive roads, pipes, cables and transport routes to connect homes with services. Those long networks make infrastructure planning and delivery more demanding.",
+      "U13": "When existing neighbourhoods are not redeveloped to accommodate more homes, growth moves farther out. That expands the city instead of making better use of roads, services and land already close to jobs and facilities.",
+      "U14": "Owners who expect land values to keep rising may prefer to hold on to a site rather than sell or rebuild. Useful land stays underdeveloped, and more new housing gets pushed towards the outskirts.",
+      "U15": "Holding valuable land can be relatively cheap compared with the gains an owner expects from its price rising. That makes it easier to keep sites vacant or underdeveloped instead of selling or building on them.",
+      "U16": "Some housing projects need several adjoining properties to form a suitable development site. When those properties cannot be bought together, redevelopment becomes difficult and growth is pushed towards easier sites on the fringe.",
+      "U17": "Neighbouring properties rarely all become available for sale at the same time when owners prefer to hold on to appreciating land. That makes it hard to combine enough land for larger redevelopment projects.",
+      "U18": "When many owners depend on rising property values, proposals to increase the cost of holding land face political resistance. Keeping those ongoing costs low makes it easier to retain sites without developing them.",
+      "U19": "Problems in shared roads and utility networks affect existing suburbs as well as new developments. When many established voters experience congestion or unreliable services, completing infrastructure becomes a major political priority.",
+      "U20": "New homes add traffic and demand for water, power and other services to networks already used by established suburbs. When capacity is stretched, the effects can spread well beyond the new development.",
+      "U21": "A fringe housing estate often relies on roads, pipes and other networks that run through established areas. Additional demand can therefore affect services and infrastructure far from the new homes themselves.",
+      "U22": "When new housing is built far from major services and employment centres, it relies on long connections through existing transport and utility networks. Those distances increase the strain and cost of extending infrastructure.",
+      "R1": "Public projects cost more when the materials and equipment they buy are expensive. Higher supplier operating costs and purchasing rules that limit cheaper alternatives can both raise the final bill.",
+      "R2": "Local suppliers must recover the cost of their premises, staff, utilities and other Australian business expenses through their prices. When those overheads are high, the materials and equipment they sell can cost more.",
+      "R3": "When suitable imported materials or equipment are cheaper but cannot readily be used, buyers have fewer ways to avoid high local prices. That keeps procurement costs higher than they might otherwise be.",
+      "R4": "Purchasing rules or government preferences can favour Australian-made materials and equipment. Where cheaper suitable imports are available, these preferences can limit price competition and raise the cost of infrastructure.",
+      "R5": "Governments face pressure to protect local suppliers and employment when choosing where public money is spent. That can encourage domestic purchasing preferences, even where suitable alternatives would cost less.",
+      "R6": "Suppliers that depend on government projects have a strong reason to lobby for local purchasing requirements. Winning that work helps protect orders, jobs and the businesses relying on an irregular flow of projects.",
+      "R7": "Local jobs matter politically, especially where businesses depend on large government contracts. Governments can face pressure to favour domestic suppliers because losing work may affect employees and their communities.",
+      "R8": "When infrastructure projects are delayed and then released in bursts, suppliers and workers rely heavily on a limited flow of major contracts. That dependence increases pressure to keep public purchasing directed towards local industry.",
+      "V1": "When people have to drive more than they otherwise would, they spend more on fuel, tyres, servicing and vehicle wear. Those extra trips increase household transport bills and leave less money for other needs.",
+      "V2": "More trips become unavoidable car journeys when work, shops, schools and services are too far apart or lack practical public transport. Households then pay for extra driving they might otherwise choose to avoid.",
+      "V3": "When buses, trains or other public transport do not run where and when people need them, driving becomes the practical option. That adds to household transport costs and limits the choices available to people without a car.",
+      "V4": "When homes and destinations are spread across large areas, fewer passengers travel along the same routes. Frequent, convenient public transport becomes harder to provide, leaving more people dependent on cars.",
+      "E1": "The costs of keeping a home go beyond its purchase price or rent. Mortgage payments, council rates and utility bills take money from household budgets, and those charges rise when housing and infrastructure become more expensive.",
+      "E2": "Buying an expensive home usually means borrowing more money, leaving households with larger mortgage repayments. That commits more income to housing and leaves less available for other needs.",
+      "E3": "Councils must maintain local roads, drainage and other infrastructure. When those networks cost more per household to maintain, some of the burden can appear in higher council rates.",
+      "E4": "Households pay recurring charges to stay connected to utilities such as electricity and water, even when they use little. Maintaining extensive networks for relatively few homes can push those regular charges higher.",
+      "E5": "Some utility providers recover network maintenance costs through the amount charged for each unit used. When infrastructure costs more per household to maintain, water, power and other usage bills can rise.",
+      "E6": "When businesses face higher rent, wages and other running costs, they often try to recover some of those expenses in the prices they charge. Everyday goods and services then become more expensive for households.",
+      "X1": "When workers look for better-paid jobs, employers may offer higher pay to keep them. That increases business costs and can add to price pressure if those costs are passed on to customers.",
+      "X2": "Replacing workers means paying to advertise jobs, recruit new staff, train them and cover work while positions are vacant. The extra expense and lost productivity raise the cost of running a business.",
+      "X3": "When the cost of essentials rises faster than people's earnings, workers look for jobs that pay enough to keep up. That pressure can lead employers to raise wages or risk losing staff.",
+      "X4": "Workers who cannot make ends meet on their current pay may leave for a better-paid job. Their departure forces employers to replace skills and experience, adding recruitment and training costs.",
+      "W1": "When necessities become more expensive without a matching rise in earnings, households can afford less with the money they have. They must cut back elsewhere, work more or go without things they previously could afford.",
+      "W2": "When payments for owning scarce assets grow faster than the new goods and services the economy produces, more money changes hands without making everyday life better. Costs can rise while the real benefits people receive fail to keep pace.",
+      "W3": "When buying land and property for future capital gains looks more profitable than expanding a business, investment moves away from equipment, skills and new production. The economy gains less of the capacity it needs to improve living standards.",
+      "W4": "Property can look more rewarding than investing in a business when buyers expect reliable price rises without taking on the risks of building a business. That draws money towards property and away from investment that could create jobs, goods and services.",
+      "W5": "When businesses face high costs and tight margins, investing in them may look less rewarding than buying appreciating property. Less business investment means fewer opportunities to improve equipment, productivity, wages and services.",
+      "W6": "When pay rises do not keep up with the rising cost of necessities, households lose purchasing power. Wage restraint in parts of the economy adds to that gap and leaves people working harder just to maintain their standard of living.",
+      "Q1": "People need accessible places to meet neighbours, join activities and make friends. When shared spaces disappear or become too expensive, communities lose everyday opportunities to form and maintain relationships.",
+      "Q2": "Free and affordable halls, clubs, centres and informal meeting places give people somewhere to gather without needing to spend much money. When those spaces close or change use, community life becomes harder to access.",
+      "Q3": "Cafés, clubs and other paid venues cannot replace free gathering places if people cannot afford to visit regularly or stay long enough to socialise. Higher prices and smaller household budgets can shut people out of these spaces.",
+      "Q4": "Community facilities can close or move to places that are harder to reach when fewer people use them. Losing a nearby, familiar venue makes it harder for people to keep up regular activities and local connections.",
+      "Q5": "When an underused community hall or meeting space becomes a shop or other business, people lose a place to gather without spending money. Extra businesses may also end up competing for the same limited local spending.",
+      "Q6": "When fewer people attend clubs, meetings and community activities, facilities can appear unnecessary or too costly to keep open. Falling participation puts shared spaces at risk of closure or conversion to other uses.",
+      "Q7": "Community activities need time as well as money. When more hours are taken up by paid work, people have less time for volunteering, local groups and informal visits, so participation falls.",
+      "Q8": "When wages no longer cover essential living costs, people may take extra shifts, second jobs or other paid work to get by. That leaves less time for family, friendships and community activities.",
+      "Q9": "After paying for rent or a mortgage, utilities, food and transport, households may have little money left for cafés, clubs or paid activities. People then attend less often or stop going altogether.",
+      "Q10": "A venue still has to pay rent, utilities and staff even when fewer customers come through the door. If too few customers share those costs, the business faces pressure to charge more per visit just to stay open.",
+      "Q11": "When customers are spread across more businesses, each venue has fewer visits over which to cover its rent, staffing and other fixed expenses. That makes staying open harder and puts pressure on prices.",
+      "Q12": "When former community facilities become commercial businesses, more venues may compete for the same limited pool of local spending. Each can end up with fewer customers, even though the community has gained no extra money to spend.",
+      "Q13": "Family, friends and neighbours see one another less when people they used to meet regularly have to move farther away. Everyday contact becomes harder, weakening the relationships that hold a community together.",
+      "Q14": "People who want to stay near family and friends may have to leave when they need a different home but cannot find or afford one locally. Each departure breaks up familiar networks of relatives, neighbours and friends.",
+      "Q15": "As families grow, they often need more bedrooms or space. If suitable homes nearby cost too much or rarely come up for sale, they may have to move away from the people and places they know.",
+      "Q16": "Couples starting a household may be unable to afford a home near their family, friends and work. Moving farther away can separate them from the community in which they hoped to build their lives.",
+      "Q17": "New residents can find it difficult to make friends when most local socialising happens in private homes among people who already know each other. With few shared places to meet, it is harder to become part of the community.",
+      "Q18": "When public meeting places disappear, social life shifts towards gatherings between established friends in private homes. Those relationships may remain strong, but new residents have fewer chances to meet people and join in.",
+      "Q19": "Long-established households may have enough room and resources to invite friends over regularly, especially once adult children have moved out. Their social lives can continue privately even while public gathering places disappear.",
+      "Q20": "When adult children move away because they cannot find or afford suitable homes nearby, parents can be left with more room at home. That makes hosting existing friends easier while weakening everyday contact across generations.",
+      "Q21": "When younger households leave, a larger share of the people who remain may already have long-standing friendships. Established groups can keep meeting privately, while newcomers have fewer natural ways to join local social life.",
+      "Q22": "Younger adults and growing families are often the ones who need a new or larger home. When local housing is too expensive or unavailable, they leave and become a smaller part of the community that remains.",
+      "Q23": "When people have little contact with other communities, claims blaming those groups for local problems can be easier to believe. Suspicion can grow when repeated negative stories go unchallenged by ordinary personal experience.",
+      "Q24": "People under pressure can come to believe another group is responsible for their problems, especially when that explanation is repeated and offers a simple answer. Those beliefs make further blame-based messages easier to promote.",
+      "Q25": "Political messages that blame another community for people's difficulties offer an easy explanation for complex problems. When those messages attract support, politicians have a reason to repeat them, deepening division.",
+      "Q26": "When blaming other groups wins votes or public support, political figures have a reason to keep doing it. Existing suspicions make these messages more appealing, creating a cycle in which blame is repeatedly rewarded.",
+      "Q27": "Without opportunities to know people from other communities, residents have fewer personal experiences on which to build trust. This can make negative stereotypes easier to accept.",
+      "Q28": "When shared spaces and community activities disappear, people have fewer chances to meet neighbours from different backgrounds. Without regular contact, familiarity and trust between communities become harder to build.",
+      "Q29": "When people face persistent problems without clear solutions, they look for explanations they can understand and act on. Simple stories can gain appeal when people are short of time and struggling to see a way forward.",
+      "Q30": "When essential living costs keep climbing, people can feel that working harder still gets them nowhere. That sense of being stuck makes quick explanations and promises of change more appealing.",
+      "Q31": "Long work hours and financial pressure leave people with less energy to investigate complicated economic and political issues. They may be more likely to encounter and rely on explanations that are quick to understand and widely repeated.",
+      "L1": "The value of land is the value of a location, separate from the value of what is built on it. When land values are artificially inflated, the extra cost flows into the price of anything that uses that land. Those costs and the expectation of further price rises shape investment and development decisions, adding pressure to housing, business costs, infrastructure and living expenses."
+    }
+  },
+  "interpretation": {
+    "central_model_premise": "Within the accepted model, inflated land values and the incentives sustaining them are the dominant remaining common systemic mechanism after partial interventions on nearer causes; they may be the decisive remaining reason some problems persist. The model expects a root-level structural change to offer the greatest practical network-wide improvement.",
+    "premise_not_quantified": "This prioritisation is the model’s accepted central proposition, not a quantitative effect estimate established by graph structure alone.",
+    "policy_context_only": "The accepted policy response is a broad-based land value tax (LVT). Its policy design or evaluation is outside this network dataset.",
+    "edge_qualifications": {
+      "M5|N1": "Loss of scale following reduced capital capacity is conditional, not automatic for every developer or project.",
+      "C5|C6": "Occupants are the housing-services consumers, including renters; investor demand and resale expectations may differ from immediate affordability.",
+      "C6|C7": "Market-entrant concentration is tied to reduced turnover of established housing, separately from owners’ retention decisions at C8.",
+      "H1|F1B": "Canonical housing-demand link to investment demand for appreciating housing assets; do not omit merely because the prose chain focuses on migration.",
+      "L1|F1A": "Feedback-cycle edge, not a statement that land inflation occurs later than housing investment demand.",
+      "T4|T12": "Large-firm productivity pathway within F3; competition from smaller firms is instead represented through T4 → T13.",
+      "I4|T12": "Large-contractor productivity explanation; there is deliberately no I7 → T12 shortcut.",
+      "K1|K4": "Tolerance for cost overruns may weaken containment incentives; this is not solely an accounting allocation of overruns.",
+      "K13|I7": "Many subcontractors create interdependent contractual obligations that hinder replacing principal contractors.",
+      "M5|U4": "Direct shared high-infrastructure-cost-per-dwelling contribution to development costs, with no extra service-cost node.",
+      "U9|U5": "Sparse networks burden maintenance costs per household; existing council and utility recovery pathways share this node.",
+      "U15|U18": "Low holding costs are maintained partly by political resistance; they are not caused by expectations of capital gains.",
+      "R1|R3": "Only applies where suitable cheaper import alternatives exist and purchasing preferences constrain substitution.",
+      "R8|U1": "A deferred and uneven infrastructure pipeline can reinforce supplier and employment political incentives.",
+      "V1|V2": "Total household vehicle expenditure increases with compelled additional use; unit fuel or servicing prices need not increase.",
+      "E4|U9": "Fixed, recurring network access/supply charge; not an installation fee.",
+      "E5|U9": "Infrastructure-maintenance costs may be recovered via usage-based utility prices; bills may combine both mechanisms.",
+      "E6|T5": "Land-linked premises overheads can contribute to consumer prices, conditional on pass-through; also the shared P5 → E6 → T5 prefix of F5 wage and workforce-turnover feedback.",
+      "W2|W3": "Economic-rent extraction versus productive capacity is the model’s analytical distinction, not a GDP accounting identity.",
+      "W3|W4": "New housing construction is productive even if the resulting property is held as a speculative/rent-producing asset.",
+      "W6|T11": "Large-business wage restraint is one sector-specific contributor, not a claim about all national earnings.",
+      "Q10|Q11": "Conditional increase in the minimum viable price after margins are exhausted; does not imply every venue can charge more.",
+      "Q11|Q12": "Additional businesses may split a fixed customer pool where converted community facilities create more competitors.",
+      "Q12|Q5": "Conditional conversion-to-commercial-competition mechanism; not a closed directed feedback cycle.",
+      "Q15|C7": "Growing families may be unable to find suitable local homes because established properties rarely turn over, distinct from high prices.",
+      "Q20|Q14": "Only the housing-driven adult-child departures represented by Q14 are claimed, not all adult children moving away.",
+      "Q21|Q22": "Growing proportion of remaining residents with existing friendships, not necessarily an absolute count increase.",
+      "Q27|Q28": "Lack of familiar contact does not by itself imply hostility or justify negative stereotypes.",
+      "Q26|Q24": "Closing F4 feedback: existing beliefs make blame messages politically rewarding; these messages reinforce beliefs.",
+      "M4|C1": "Shared wage-setting prefix before S2, not a branch that splits at M4.",
+      "C1|C2": "Pressure to minimise construction labour expenditure is an effect of squeezed construction margins; C2 is the actual S2 split.",
+      "C2|M5": "S2-A: higher land-related development costs can squeeze construction margins, without necessarily raising physical build quantities or unit material costs.",
+      "C2|C3": "S2-B: constrained cost pass-through to price-sensitive housing purchasers and occupants can squeeze construction margins; the branches operate jointly or separately.",
+      "T5|X1": "F5-A: employers may offer additional remuneration to retain workers seeking better-paid jobs; incremental retention wage cost contributes to overheads.",
+      "X1|X3": "Shared worker incentive: high living costs motivate a search for higher earnings where opportunities exist.",
+      "T5|X2": "F5-B: departed workers requiring replacement can raise recruitment and onboarding costs, including temporary coverage and productivity disruption.",
+      "X2|X4": "F5-B: departure and staff replacement are conditional on actual turnover and need to recruit.",
+      "X4|X3": "General job-seeking/departure response, distinct from T9 selective departure of capable large-firm employees.",
+      "X3|P5": "Closing F5 edge. High living costs motivate seeking better-paid employment; no universal wage increase or departure is implied."
+    },
+    "noncanonical_context": [
+      "Perceived economic-opportunity divergence and political mobilisation can sometimes counteract division; not a fifth P6 chain.",
+      "Municipal planning multipliers and trainee incentives remain explanatory or deferred, not graph edges.",
+      "Shareholder-return expectations form accepted explanatory context for T4/T11 and W4/W5, not independent new edges.",
+      "Historical land cycles and an eventual-crash conclusion are interpretive context, not a crash node or a collapse-timing graph path."
+    ],
+    "cumulative_trajectory": "Accepted mechanisms contribute under their applicable conditions, indirectly and cumulatively through shared markets and feedback. The net trajectory matters more than the numerical magnitude of any single pathway or one-time snapshot; overlapping effects must not simply be summed.",
+    "unchanged_system_conclusion": "The project concludes that continued, uncorrected speculative land-value inflation inevitably culminates in systemic collapse. Its timing, trigger, and form are unpredictable. This is the model’s systemic argument, not a mathematical claim established by graph topology alone or a newly modelled crash edge.",
+    "mathematical_context": "A persistent compounded divergence between the cost of necessities and the resources available to meet them cannot coexist indefinitely with unchanged access and expenditure arrangements. The conclusion about the form of eventual collapse also invokes the interconnected economic model and historical land-cycle interpretation.",
+    "historical_cycle_context": "The project invokes an approximately two-century record of many land cycles as support for its interpretation. This dataset does not independently verify the asserted universal historical pattern.",
+    "intervention_boundary": "Deliberate root-cause structural reform changes the system and is a corrective response, not an endogenous self-correction generated by unchanged land-value incentives; no crash, timing, or policy nodes are in the canonical graph.",
+    "question_answering_guidance": "Explain canonical paths firmly and distinguish a supported non-canonical extension by provenance, not automatically by weak confidence. Do not demand individual impact estimates or recurrently hedge systemic claims solely due to absent magnitudes.",
+    "whole_property_vs_land": "G2 and G3 refer intentionally to whole-property market prices, which owners and political actors experience; the model attributes the persistent real speculative gains principally to underlying land values via G5 → L1.",
+    "shareholder_return_context": "In investor-owned firms, shareholder return expectations relative to property and other investments can reinforce managerial emphasis on margins, remuneration restraint, training, and investment (T4/T11 and W4/W5). Selling previously issued shares does not by itself drain the company’s operating cash, but market valuation may affect new equity finance and managerial incentives. Context only: no new canonical links.",
+    "f5_context": "F5 amplifies the existing land-anchored P5 → E6 → T5 → T6 → L1 route with conditional retention wage (X1) and staff replacement (X2/X4) variants sharing X3 → P5. Neither general wage indexation nor universal departures are implied, and F5 is not independent of land-cost pressures."
+  },
+  "quality_assurance": {
+    "canonical_node_count": 154,
+    "canonical_directed_edge_count": 205,
+    "documented_feedback_system_count": 5,
+    "documented_closed_feedback_sequence_count": 6,
+    "simple_directed_cycles_in_graph": 16,
+    "additional_simple_cycles_not_individually_documented": 10,
+    "unique_node_ids": true,
+    "unique_directed_edges": true,
+    "all_edge_endpoints_valid": true,
+    "all_registered_nodes_incident_to_edge": true,
+    "all_nodes_have_path_to_L1": true,
+    "all_top_level_problems_have_path_to_L1": true,
+    "all_documented_cycle_sequences_are_closed_and_edges_valid": true,
+    "documented_cycle_sequences_present_in_full_graph": true,
+    "all_structural_split_edges_valid": true,
+    "all_rejoin_markers_unique": true,
+    "weakly_connected": true,
+    "undirected_graph_planar": false,
+    "v11_vs_v10": {
+      "new_canonical_nodes": [
+        "X1",
+        "X2",
+        "X3",
+        "X4"
+      ],
+      "removed_directed_edges": [
+        {
+          "source": "M4",
+          "target": "M5"
+        }
+      ],
+      "added_directed_edges": [
+        {
+          "source": "C2",
+          "target": "M5"
+        },
+        {
+          "source": "T5",
+          "target": "X1"
+        },
+        {
+          "source": "T5",
+          "target": "X2"
+        },
+        {
+          "source": "X1",
+          "target": "X3"
+        },
+        {
+          "source": "X2",
+          "target": "X4"
+        },
+        {
+          "source": "X3",
+          "target": "P5"
+        },
+        {
+          "source": "X4",
+          "target": "X3"
+        }
+      ],
+      "unchanged_preexisting_node_labels": true
+    },
+    "source_annotation_marker_ambiguity": null
+  }
+}
